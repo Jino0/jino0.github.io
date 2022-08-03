@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on jino0 blog</title>
+    <link>https://jino0.github.io/post/</link>
+    <description>Recent content in Posts on jino0 blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Tue, 02 Aug 2022 14:31:39 +0800</lastBuildDate><atom:link href="https://jino0.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HaHa</title>
+      <link>https://jino0.github.io/post/haha/</link>
+      <pubDate>Tue, 02 Aug 2022 14:31:39 +0800</pubDate>
+      
+      <guid>https://jino0.github.io/post/haha/</guid>
+      <description>
+        
+          
+            首先在github上创建好仓库，注意事项见“准备工作”。 首先在github上创建好仓库，注意事项见“准备工作”。 首先在github上创建好仓库，注意事项见“准备工作”。
+1 Markdown.com.cn 简介 支持自定义样式的 Markdown 编辑器 支持微信公众号、知乎和稀土掘金 点击右上方对应图标，一键复制到各平台 2 Markdown语法教程 2.1 标题 不同数量的#可以完成不同的标题，如下：
+一级标题 二级标题 三级标题 2.2 字体 粗体、斜体、粗体和斜体，删除线，需要在文字前后加不同的标记符号。如下：
+这个是粗体
+这个是斜体
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>first</title>
+      <link>https://jino0.github.io/post/filename/</link>
+      <pubDate>Sun, 25 Oct 2015 08:36:54 -0700</pubDate>
+      
+      <guid>https://jino0.github.io/post/filename/</guid>
+      <description>
+        
+          
+            Hello Hugo aaa bbb ccc 打开终端
+输入命令brew install hugo,此命令可直接安装hugo(当然，前提是将brew安装好)，hugo version可查看是否已经安装好。
+输入命令hugo new site myblog,最后一个单词为在当前目录下生成文件夹名，也是你的网站的大本营，后续大部分的操作都在这个文件夹下进行，此目录在下文中我统称为根目录。
+可在hugo官网主题进行下载主题,可以使用git命令对主题进行克隆，注意，下载的主题要放在博客根目录的themes目录下。
+在根目录下执行命令hugo server -t hugo-tranquilpeak-theme &amp;ndash;buildDrafts,其中hugo-tranquilpeak-theme为你下载的主题名称,如果没问题就会提示下面信息，此时在浏览器中输入:localhost:1313,如果能正常显示，说明在本地服务器运行已经没问题。
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
