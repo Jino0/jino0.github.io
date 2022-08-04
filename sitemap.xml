@@ -2,22 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/post/haha/</loc>
-    <lastmod>2022-08-02T14:31:39+08:00</lastmod>
+    <loc>https://jino0.github.io/</loc>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2022-08-02T14:31:39+08:00</lastmod>
+    <loc>https://jino0.github.io/readme/</loc>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2022-08-02T14:31:39+08:00</lastmod>
-  </url><url>
-    <loc>/post/filename/</loc>
-    <lastmod>2015-10-25T08:36:54-07:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/readme/</loc>
-  </url><url>
-    <loc>/tags/</loc>
+    <loc>https://jino0.github.io/tags/</loc>
   </url>
 </urlset>
