@@ -3,9 +3,18 @@
         <title>jino0’s bBlog</title>
         <link>https://jino0.github.io/</link>
         <description>Hugo DoIt 主题官方文档</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 14 Aug 2022 15:19:22 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 14 Aug 2022 16:08:03 &#43;0800</lastBuildDate>
             <atom:link href="https://jino0.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>git</title>
+    <link>https://jino0.github.io/git/</link>
+    <pubDate>Sun, 14 Aug 2022 16:08:03 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/git/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/child.webp" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>Index</title>
     <link>https://jino0.github.io/ios-1/</link>
     <pubDate>Sun, 14 Aug 2022 15:19:22 &#43;0800</pubDate><author>
