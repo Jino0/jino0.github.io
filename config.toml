@@ -1,7 +1,7 @@
-baseURL = "https://hugodoit.pages.dev"
+baseURL = "https://jino0.github.io"
 # [en, zh-cn, fr, pl, ...] determines default content language
 # [en, zh-cn, fr, pl, ...] 设置默认的语言
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh-cn"
 # theme
 # 主题
 theme = "DoIt"
@@ -11,17 +11,20 @@ theme = "DoIt"
 
 # website title
 # 网站标题
-title = "DoIt"
+title = "jino0’s bBlog"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
-enableRobotsTXT = true
+# enableRobotsTXT = true
 # whether to use git commit log
 # 是否使用 git 信息
-enableGitInfo = true
+# enableGitInfo = true
 # whether to use emoji code
 # 是否使用 emoji 代码
-enableEmoji = true
+# enableEmoji = true
+
+# [outputs]
+#   home = ["HTML", "RSS"]
 
 [languages]
   [languages.en]
@@ -35,7 +38,7 @@ enableEmoji = true
     # default amount of posts in each pages
     paginate = 12
     # [UA-XXXXXXXX-X] google analytics code (replaced by params.analytics.google)
-    googleAnalytics = ""
+    # googleAnalytics = ""
     # copyright description used only for seo schema
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # Menu config
@@ -174,11 +177,11 @@ enableEmoji = true
           # Gravatar Email for preferred avatar in home page
           gravatarEmail = ""
           # URL of avatar shown in home page
-          avatarURL = "/images/avatar.webp"
+          avatarURL = "/images/icons.png"
           # title shown in home page (HTML format is supported)
           title = ""
           # subtitle shown in home page
-          subtitle = "A Clean, Elegant but Advanced Hugo Theme"
+          subtitle = "na na na na na na na na na "
           # whether to use typeit animation for subtitle
           typeit = true
           # whether to show social links
@@ -192,9 +195,9 @@ enableEmoji = true
           paginate = 7
       # Social config in home page
       [languages.en.params.social]
-        GitHub = "xxxx"
+        GitHub = "jino0"
         Linkedin = ""
-        Twitter = "xxxx"
+        Twitter = ""
         Instagram = ""
         Facebook = "xxxx"
         Telegram = "xxxx"
@@ -287,7 +290,7 @@ enableEmoji = true
     # 默认每页列表显示的文章数目
     paginate = 12
     # [UA-XXXXXXXX-X] 谷歌分析代号 (被 params.analytics.google 替代)
-    googleAnalytics = ""
+    # googleAnalytics = ""
     # 版权描述，仅仅用于 SEO
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # 菜单配置
@@ -298,9 +301,9 @@ enableEmoji = true
         pre = ""
         # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
         post = ""
-        name = "所有文章"
+        name = "所有"
         url = "/posts/"
-        title = ""
+        title = "ss"
         weight = 1
       [[languages.zh-cn.menu.main]]
         identifier = "tags"
@@ -326,45 +329,45 @@ enableEmoji = true
         url = "/series/"
         title = ""
         weight = 4
-      [[languages.zh-cn.menu.main]]
-        identifier = "authors"
-        pre = ""
-        post = ""
-        name = "作者"
-        url = "/authors/"
-        title = ""
-        weight = 5
-      [[languages.zh-cn.menu.main]]
-        identifier = "showcase"
-        pre = ""
-        post = ""
-        name = "作品"
-        url = "/showcase/"
-        title = ""
-        weight = 6
-      [[languages.zh-cn.menu.main]]
-        identifier = "documentation"
-        pre = ""
-        name = "文档"
-        url = "/categories/documentation/"
-        title = ""
-        weight = 7
-      [[languages.zh-cn.menu.main]]
-        identifier = "about"
-        pre = ""
-        post = ""
-        name = "关于"
-        url = "/about/"
-        title = ""
-        weight = 8
-      [[languages.zh-cn.menu.main]]
-        identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
-        post = ""
-        name = ""
-        url = "https://github.com/HEIGE-PCloud/DoIt"
-        title = "GitHub"
-        weight = 9
+      # [[languages.zh-cn.menu.main]]
+      #   identifier = "authors"
+      #   pre = ""
+      #   post = ""
+      #   name = "作者"
+      #   url = "/authors/"
+      #   title = ""
+      #   weight = 5
+      # [[languages.zh-cn.menu.main]]
+      #   identifier = "showcase"
+      #   pre = ""
+      #   post = ""
+      #   name = "作品"
+      #   url = "/showcase/"
+      #   title = ""
+      #   weight = 6
+      # [[languages.zh-cn.menu.main]]
+      #   identifier = "documentation"
+      #   pre = ""
+      #   name = "文档"
+      #   url = "/categories/documentation/"
+      #   title = ""
+      #   weight = 7
+      # [[languages.zh-cn.menu.main]]
+      #   identifier = "about"
+      #   pre = ""
+      #   post = ""
+      #   name = "关于"
+      #   url = "/about/"
+      #   title = ""
+      #   weight = 8
+      # [[languages.zh-cn.menu.main]]
+      #   identifier = "github"
+      #   pre = "<i class='fab fa-github fa-fw'></i>"
+      #   post = ""
+      #   name = ""
+      #   url = "https://github.com/HEIGE-PCloud/DoIt"
+      #   title = "GitHub"
+      #   weight = 9
     [languages.zh-cn.params]
       # 网站描述
       description = "Hugo DoIt 主题官方文档"
@@ -424,11 +427,11 @@ enableEmoji = true
           # Gravatar 邮箱，用于优先在主页显示的头像
           gravatarEmail = ""
           # 主页显示头像的 URL
-          avatarURL = "/images/avatar.webp"
+          avatarURL = "/images/icons.png"
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = ""
+          # title = "Jino’s blog "
           # 主页显示的网站副标题
-          subtitle = "一个简洁、优雅且高效的 Hugo 主题"
+          subtitle = "na na na na na na na na na na na"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
@@ -439,10 +442,10 @@ enableEmoji = true
         [languages.zh-cn.params.home.posts]
           enable = true
           # 主页每页显示文章数量
-          paginate = 7
+          paginate = 10
       # 主页的社交信息设置
       [languages.zh-cn.params.social]
-        GitHub = "xxxx"
+        GitHub = "jino0"
         Linkedin = ""
         Twitter = ""
         Instagram = ""
@@ -462,7 +465,7 @@ enableEmoji = true
         FreeCodeCamp = ""
         Bitbucket = ""
         Stackoverflow = ""
-        Weibo = "xxxx"
+        Weibo = "hot"
         Odnoklassniki = ""
         VK = ""
         Flickr = ""
@@ -480,13 +483,13 @@ enableEmoji = true
         Hackernews = ""
         Kickstarter = ""
         Patreon = ""
-        Steam = "xxxx"
+        Steam = ""
         Twitch = ""
         Strava = ""
         Skype = ""
         Whatsapp = ""
-        Zhihu = "xxxx"
-        Douban = "xxxx"
+        Zhihu = "education/learning"
+        Douban = ""
         Angellist = ""
         Slidershare = ""
         Jsfiddle = ""
@@ -499,7 +502,7 @@ enableEmoji = true
         Researchgate = ""
         Mastodon = ""
         Thingiverse = ""
-        Devto = "xxxx"
+        Devto = ""
         Gitea = ""
         XMPP = ""
         Matrix = ""
@@ -512,13 +515,13 @@ enableEmoji = true
         QQ = ""
         QQGroup = ""
         Email = "xxxx@xxxx.com"
-        RSS = true
+        RSS = false
         # 赞助设置
-      [languages.zh-cn.params.sponsor]
-        enable = false
-        bio = "如果你觉得这篇文章对你有所帮助，欢迎赞赏~"
-        link = "https://github.com/sponsors/HEIGE-PCloud"
-        # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
+      # [languages.zh-cn.params.sponsor]
+      #   enable = false
+      #   bio = "如果你觉得这篇文章对你有所帮助，欢迎赞赏~"
+      #   link = "https://github.com/sponsors/HEIGE-PCloud"
+      #   custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
 
 
 [params]
@@ -533,7 +536,8 @@ enableEmoji = true
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
-  gitRepo = "https://github.com/HEIGE-PCloud/DoIt"
+  # gitRepo = "https://github.com/HEIGE-PCloud/DoIt"
+  gitRepo = "https://github.com/jino0"
   # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
   # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI ("sha256", "sha384", "sha512", "md5")
   fingerprint = ""
@@ -548,7 +552,7 @@ enableEmoji = true
   enablePWA = false
   # license information
   # 许可协议信息 (支持 HTML 格式)
-  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  # license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
   # [Experimental] Bundle js
   bundle = false
   # Header config
@@ -562,25 +566,26 @@ enableEmoji = true
     mobileMode = "auto"
     # theme change mode ("switch", "select")
     # 主题切换模式 ("switch", "select")
-    themeChangeMode = "select"
+    themeChangeMode = "switch"
     # Header title config
     # 页面头部导航栏标题配置
     [params.header.title]
       # URL of the LOGO
       # LOGO 的 URL
-      logo = ""
+      logo = "/images/camel.png"
       # title name
       # 标题名称
-      name = "DoIt"
+      name = "jino0’s bBlog"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = "<i class='far fa-edit fa-fw'></i>"
+      # pre = "<i class='far fa-edit fa-fw'></i>"
+      pre = "  "
       # you can add extra information after the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
       post = ""
       # whether to use typeit animation for title name
       # 是否为标题显示打字机动画
-      typeit = true
+      typeit = false
 
   # Footer config
   # 页面底部信息配置
@@ -604,20 +609,20 @@ enableEmoji = true
     author = true
     # site creation time
     # 网站创立年份
-    since = 2019
+    since = 2022
     # ICP info only in China (HTML format is supported)
     # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
     icp = ""
     # license info (HTML format is supported)
     # 许可协议信息 (支持 HTML 格式)
-    license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    # license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   # Section (all posts) page config
   # Section (所有文章) 页面配置
   [params.section]
     # special amount of posts in each section page
     # section 页面每页显示文章数量
-    paginate = 20
+    paginate = 10
     # date format (month and day)
     # 日期格式 (月和日)
     dateFormat = "01-02"
@@ -673,20 +678,24 @@ enableEmoji = true
     # 是否显示原始 Markdown 文档内容的链接
     linkToMarkdown = true
     # configure the link to view source the post
+
     # 配置文章原始文件的链接
-    linkToSource = "https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/{path}"
+    # linkToSource = "https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/{path}"
     # "https://github.com/user/repo/blob/main/{path}"
     # configure the link to edit the post
+
     # 配置编辑文章的链接
-    linkToEdit = "https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/{path}"
+    # linkToEdit = "https://github.com/HEIGE-PCloud/DoIt/edit/main/exampleSite/content/{path}"
     # https://github.com/user/repo/edit/main/{path}
     # https://gitlab.com/user/repo/-/edit/main/{path}
     # https://bitbucket.org/user/repo/src/main/{path}?mode=edit
     # configure the link to report issue for the post
+
     # 配置提交错误的链接
-    linkToReport = "https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/{path}|"
+    # linkToReport = "https://github.com/HEIGE-PCloud/DoIt/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/HEIGE-PCloud/DoIt/blob/main/exampleSite/content/{path}|"
     # https://github.com/user/repo/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/user/repo/blob/main/{path}|"
     # https://gitlab.com/user/repo/-/issues/new?issue[title]=[bug]%20{title}&issue[description]=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://gitlab.com/user/repo/-/edit/main/{path}|
+    
     # whether to show the full text content in RSS
     # 是否在 RSS 中显示全文内容
     rssFullText = false
@@ -790,7 +799,7 @@ enableEmoji = true
     # 文章页面的分享信息设置
     [params.page.share]
       enable = true
-      Twitter = true
+      # Twitter = true
       Facebook = true
       Linkedin = false
       Whatsapp = false
@@ -994,10 +1003,10 @@ enableEmoji = true
 
   # Sponsor config
   # 赞助设置
-  [params.sponsor]
-    enable = false
-    bio = "If you find this post helpful, please consider sponsoring."
-    link = "https://github.com/sponsors/HEIGE-PCloud"
+  # [params.sponsor]
+  #   enable = false
+  #   bio = "If you find this post helpful, please consider sponsoring."
+  #   link = "https://github.com/sponsors/HEIGE-PCloud"
     # custom = "<a href=\"https://www.buymeacoffee.com/PCloud\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"
 
   # TypeIt config
@@ -1039,35 +1048,35 @@ enableEmoji = true
 
   # Analytics config
   # 网站分析配置
-  [params.analytics]
-    enable = false
-    # Google Analytics
-    [params.analytics.google]
-      id = ""
-      # whether to anonymize IP
-      # 是否匿名化用户 IP
-      anonymizeIP = true
-    # Fathom Analytics
-    [params.analytics.fathom]
-      id = ""
-      # server url for your tracker if you're self hosting
-      # 自行托管追踪器时的主机路径
-      server = ""
-    # Baidu Analytics
-    [params.analytics.baidu]
-      id = ""
-    # Umami Analytics
-    [params.analytics.umami]
-      data_website_id = ""
-      src = ""
-      data_domains = ""
-    # Plausible Analytics
-    [params.analytics.plausible]
-      data_domain = ""
-      src = ""
-    # Cloudflare Analytics
-    [params.analytics.cloudflare]
-      token = ""
+  # [params.analytics]
+  #   enable = false
+  #   # Google Analytics
+  #   [params.analytics.google]
+  #     id = ""
+  #     # whether to anonymize IP
+  #     # 是否匿名化用户 IP
+  #     anonymizeIP = true
+  #   # Fathom Analytics
+  #   [params.analytics.fathom]
+  #     id = ""
+  #     # server url for your tracker if you're self hosting
+  #     # 自行托管追踪器时的主机路径
+  #     server = ""
+  #   # Baidu Analytics
+  #   [params.analytics.baidu]
+  #     id = ""
+  #   # Umami Analytics
+  #   [params.analytics.umami]
+  #     data_website_id = ""
+  #     src = ""
+  #     data_domains = ""
+  #   # Plausible Analytics
+  #   [params.analytics.plausible]
+  #     data_domain = ""
+  #     src = ""
+  #   # Cloudflare Analytics
+  #   [params.analytics.cloudflare]
+  #     token = ""
 
   # Cookie consent config
   # Cookie 许可配置
@@ -1142,9 +1151,9 @@ enableEmoji = true
 # Author config
 # 作者配置
 [author]
-  name = "PCloud"
-  email = "heige.pcloud@outlook.com"
-  link = "https://github.com/HEIGE-PCloud"
+  name = "jino0"
+  # email = "heige.pcloud@outlook.com"
+  link = "https://jino0.github.io"
   avatar = "/images/avatar.webp"
   gravatarEmail = ""
 
@@ -1166,12 +1175,12 @@ enableEmoji = true
 [privacy]
   # privacy of the Google Analytics (replaced by params.analytics.google)
   # Google Analytics 相关隐私 (被 params.analytics.google 替代)
-  [privacy.googleAnalytics]
+  # [privacy.googleAnalytics]
     # ...
-  [privacy.twitter]
-    enableDNT = true
-  [privacy.youtube]
-    privacyEnhanced = true
+  # [privacy.twitter]
+  #   enableDNT = true
+  # [privacy.youtube]
+  #   privacyEnhanced = true
 
 # Options to make output .md files
 # 用于输出 Markdown 格式文档的设置
