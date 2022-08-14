@@ -2,6 +2,7 @@
 
 
 使用 mac+hugo+github 搭建个人博客。
+<!--more-->
 
 ## 准备工作
 
