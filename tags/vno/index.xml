@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Vno - Tag - DoIt</title>
+        <link>https://jino0.github.io/tags/vno/</link>
+        <description>Vno - Tag - DoIt</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>heige.pcloud@outlook.com (PCloud)</managingEditor>
+            <webMaster>heige.pcloud@outlook.com (PCloud)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 19 Jul 2021 07:28:27 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/tags/vno/" rel="self" type="application/rss+xml" /><item>
+    <title>Hello World Vno</title>
+    <link>https://jino0.github.io/post/xxyy/</link>
+    <pubDate>Mon, 19 Jul 2021 07:28:27 &#43;0800</pubDate><author>
+        <name>PCloud</name>
+    </author><guid>https://jino0.github.io/post/xxyy/</guid>
+    <description><![CDATA[0.0.1 What&rsquo;s thisVno Hugo is a theme for Hugo. It is a port of onevcat&rsquo;s Vno Jekyll, which is originally developed from Dale Anthony&rsquo;s Uno.
+0.0.2 UsageInside the folder of your Hugo site run:
+1 $ git submodule add https://github.com/xslingcn/vno-hugo.git themes/vno-hugo Copy everything in the exampleSite folder to the root of your hugo site, then run hugo serve. Your site with Vno Hugo enabled should be accessible in http://localhost:1313/.]]></description>
+</item></channel>
+</rss>
