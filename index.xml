@@ -27,7 +27,9 @@
     <pubDate>Fri, 05 Aug 2022 14:37:23 &#43;0800</pubDate><author>
         <name>jino0</name>
     </author><guid>https://jino0.github.io/mac-hugo/</guid>
-    <description><![CDATA[使用 mac+hugo+github 搭建个人博客。 1 准备工作 1.1 brew安装 1 /bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34; 1.2 githubgithub上创建一个仓库，仓库的名称格式一定是：username.g]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hot-air-balloons.jpeg" referrerpolicy="no-referrer">
+            </div>使用 mac+hugo+github 搭建个人博客。 1 准备工作 1.1 brew安装 1 /bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34; 1.2 githubgithub上创建一个仓库，仓库的名称格式一定是：username.g]]></description>
 </item><item>
     <title>README</title>
     <link>https://jino0.github.io/readme/</link>
