@@ -177,7 +177,7 @@ title = "jino0’s bBlog"
           # Gravatar Email for preferred avatar in home page
           gravatarEmail = ""
           # URL of avatar shown in home page
-          avatarURL = "/images/icons.png"
+          avatarURL = "/images/hha.png"
           # title shown in home page (HTML format is supported)
           title = ""
           # subtitle shown in home page
@@ -427,7 +427,7 @@ title = "jino0’s bBlog"
           # Gravatar 邮箱，用于优先在主页显示的头像
           gravatarEmail = ""
           # 主页显示头像的 URL
-          avatarURL = "/images/icons.png"
+          avatarURL = "/images/hha.png"
           # 主页显示的网站标题 (支持 HTML 格式)
           # title = "Jino’s blog "
           # 主页显示的网站副标题

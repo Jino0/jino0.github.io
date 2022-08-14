@@ -7,9 +7,14 @@ draft: false
 tags: ["hugo"]
 categories: ["hugo"]
 series: ["hugos"]
+
+
+featuredImage: "hot-air-balloons.jpeg"
+featuredImagePreview: "hot-air-balloons.jpeg"
 ---
 
 使用 mac+hugo+github 搭建个人博客。
+<!--more-->
 
 ## 准备工作
 
