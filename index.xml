@@ -3,9 +3,18 @@
         <title>jino0’s bBlog</title>
         <link>https://jino0.github.io/</link>
         <description>Hugo DoIt 主题官方文档</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 05 Aug 2022 14:37:23 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 14 Aug 2022 16:08:03 &#43;0800</lastBuildDate>
             <atom:link href="https://jino0.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>git</title>
+    <link>https://jino0.github.io/git/</link>
+    <pubDate>Sun, 14 Aug 2022 16:08:03 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/git/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/elephant-3458033__480.jpeg" referrerpolicy="no-referrer">
+            </div><p>介绍 git 相关使用方法，一些命令的介绍。也是 <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreffer">git pro 读书笔记</a>。</p>]]></description>
+</item><item>
     <title>Mac&#43;hugo&#43;github搭建个人博客</title>
     <link>https://jino0.github.io/mac-hugo/</link>
     <pubDate>Fri, 05 Aug 2022 14:37:23 &#43;0800</pubDate><author>
@@ -18,7 +27,7 @@
     <title>README</title>
     <link>https://jino0.github.io/readme/</link>
     <pubDate>Fri, 05 Aug 2022 14:37:23 &#43;0800</pubDate><author>
-        <name>jino</name>
+        <name>jino0</name>
     </author><guid>https://jino0.github.io/readme/</guid>
     <description><![CDATA[这是一篇名为README的文章。 但是我我还没想好 readme 里写点什么。]]></description>
 </item></channel>

@@ -29,7 +29,7 @@
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        let metaColors = {'light': '#f8f8f8','dark': '#E7F02A','black': '#000000'}
         getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
@@ -117,6 +117,15 @@
                                 </a>
                             </h3><article class="archive-item">
                                     <a href="/mac-hugo/" class="archive-item-link">Mac&#43;hugo&#43;github搭建个人博客</a>
+                                </article></div>
+                    </div><div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="/categories/tool/">
+                                    <i class="far fa-folder fa-fw"></i>&nbsp;tool <sup>1</sup>
+                                </a>
+                            </h3><article class="archive-item">
+                                    <a href="/git/" class="archive-item-link">git</a>
                                 </article></div>
                     </div></div></div></div>
         </main><footer class="footer">
