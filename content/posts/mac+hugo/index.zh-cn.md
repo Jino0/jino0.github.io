@@ -1,5 +1,5 @@
 ---
-title: "Mac+hugo+github搭建个人博客"
+title: "Mac+hugo+github 搭建个人博客"
 date: 2022-08-05T14:37:23+08:00
 lastMod: 2022-08-14T15:10:23+08:00
 

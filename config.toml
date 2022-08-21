@@ -616,6 +616,8 @@ title = "jino0’s bBlog"
     # license info (HTML format is supported)
     # 许可协议信息 (支持 HTML 格式)
     # license= '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    [params.footer.ibruce]
+      enable = true
 
   # Section (all posts) page config
   # Section (所有文章) 页面配置
@@ -849,7 +851,7 @@ title = "jino0’s bBlog"
       # Valine comment config (https://github.com/xCss/Valine)
       # Valine 评论系统设置 (https://github.com/xCss/Valine)
       [params.page.comment.valine]
-        enable = false
+        enable = true
         appId = ""
         appKey = ""
         placeholder = ""
@@ -1121,12 +1123,15 @@ title = "jino0’s bBlog"
   # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
     codeFences = true
-    guessSyntax = true
+    guessSyntax = false
     lineNos = true
     lineNumbersInTable = true
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+    style= 'manni'
+    hl_Lines = ""
+
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
   [markup.goldmark]
