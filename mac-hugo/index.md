@@ -1,4 +1,4 @@
-# Mac+hugo+github搭建个人博客
+# Mac+hugo+github 搭建个人博客
 
 
 使用 mac+hugo+github 搭建个人博客。

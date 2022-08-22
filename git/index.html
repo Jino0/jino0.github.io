@@ -5,36 +5,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">git - jino0’s bBlog</title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="git" />
+    <title class="pjax-title">git pro 读书笔记 - jino0’s bBlog</title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="git pro 读书笔记" />
 <meta property="og:description" content="介绍 git 相关使用方法，一些命令的介绍。也是 git pro 读书笔记。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jino0.github.io/git/" /><meta property="og:image" content="https://jino0.github.io/images/avatar.webp"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-14T16:08:03+08:00" />
-<meta property="article:modified_time" content="2022-08-14T16:08:03+08:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
+<meta property="article:modified_time" content="2022-08-18T01:05:03+08:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jino0.github.io/images/avatar.webp"/>
 
-<meta name="twitter:title" content="git"/>
+<meta name="twitter:title" content="git pro 读书笔记"/>
 <meta name="twitter:description" content="介绍 git 相关使用方法，一些命令的介绍。也是 git pro 读书笔记。"/>
 <meta name="application-name" content="DoIt">
 <meta name="apple-mobile-web-app-title" content="DoIt">
 
 <meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jino0.github.io/git/" /><link rel="prev" href="https://jino0.github.io/mac-hugo/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jino0.github.io/git/" /><link rel="prev" href="https://jino0.github.io/mac-hugo/" /><link rel="next" href="https://jino0.github.io/linkedlist/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "git",
+        "headline": "git pro 读书笔记",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jino0.github.io\/git\/"
-        },"image": ["https:\/\/jino0.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git","wordcount":  7110 ,
-        "url": "https:\/\/jino0.github.io\/git\/","datePublished": "2022-08-14T16:08:03+08:00","dateModified": "2022-08-14T16:08:03+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["https:\/\/jino0.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "git","wordcount":  7049 ,
+        "url": "https:\/\/jino0.github.io\/git\/","datePublished": "2022-08-14T16:08:03+08:00","dateModified": "2022-08-18T01:05:03+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -53,7 +53,7 @@
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#E7F02A','black': '#000000'}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
         getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
@@ -179,16 +179,14 @@
     <li><a href="#cherry-pick">cherry-pick</a></li>
   </ul>
 </nav></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">git</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">git pro 读书笔记</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://jino0.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">jino0</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/tool/"><i class="far fa-folder fa-fw"></i>tool</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-14">2022-08-14</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-14">2022-08-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7110 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;<span id="/git/" class="leancloud_visitors" data-flag-title="git">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count"></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/git/" class="leancloud_visitors" data-flag-title="git">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-14">2022-08-14</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-18">2022-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7049 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;<span id="/git/" class="leancloud_visitors" data-flag-title="git pro 读书笔记">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
-                    </span>&nbsp;<span id="/git/" class="comment_count" data-flag-title="git">
+                    </span>&nbsp;<span id="/git/" class="comment_count" data-flag-title="git pro 读书笔记">
                         <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
@@ -269,48 +267,18 @@
     <a href="#%e8%8e%b7%e5%8f%96git%e4%bb%93%e5%ba%93%e7%9a%84%e4%b8%a4%e7%a7%8d%e6%96%b9%e5%bc%8f" class="header-mark"></a>7 获取git仓库的两种方式</h2><ol>
 <li>在已存在目录中初始化仓库: 如果你有一个尚未进行版本控制的项目目录，想要用 Git 来控制它，那么首先需要进入该项目目录中。执行：</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> git init。
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这是会在该文件下创建一个 .git 文件，但此时还没有被跟踪，下一步，开始追踪：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> git add *.c
-</span></span><span class="line"><span class="cl"> git add LICENSE  //添加为跟踪文件
-</span></span><span class="line"><span class="cl"> git commit -m &#39;initial project version&#39;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+<pre tabindex="0"><code> git init。
+</code></pre><p>这是会在该文件下创建一个 .git 文件，但此时还没有被跟踪，下一步，开始追踪：</p>
+<pre tabindex="0"><code> git add *.c
+ git add LICENSE  //添加为跟踪文件
+ git commit -m &#39;initial project version&#39;
+</code></pre><ol start="2">
 <li><code>git clone &lt;url&gt;</code>	 会克隆下git仓库服务器上的几乎所有数据，不是用什么克隆什么。</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Git clone &lt; url&gt;  newName 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>支持，克隆本地后在本地用新名字。而且不但支持http协议，还支持SSH等多种协议。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git status 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>每一个文件都只有两种状态，已跟踪 或 未跟踪。已跟踪的文件就是已经纳入版本控制的文件。初次克隆仓库的时候，所有的文件都是已跟踪文件，未修改的状态。</p>
+<pre tabindex="0"><code>Git clone &lt; url&gt;  newName 
+</code></pre><p>支持，克隆本地后在本地用新名字。而且不但支持http协议，还支持SSH等多种协议。</p>
+<pre tabindex="0"><code>git status 
+</code></pre><p>每一个文件都只有两种状态，已跟踪 或 未跟踪。已跟踪的文件就是已经纳入版本控制的文件。初次克隆仓库的时候，所有的文件都是已跟踪文件，未修改的状态。</p>
 <p><code>git status</code> 可以查看文件的状态。</p>
 <h2 id="跟踪新文件" class="headerLink">
     <a href="#%e8%b7%9f%e8%b8%aa%e6%96%b0%e6%96%87%e4%bb%b6" class="header-mark"></a>8 跟踪新文件</h2><p>假设现在刚创建了一个文件，该文件就是未跟踪状态。<code>git status</code>之后，会有 <code>Untrack files：XXX</code> 的提示，而且 git 仓库并不会直接把它纳入跟踪范围，需要手动添加，命令：
@@ -318,27 +286,14 @@
 <p>暂存已修改的文件：当修改了一个已跟踪的文件之后，再 <code>git status</code> 会，显示 <code>Changes not staged for commit</code>。即修改没放到暂存区。放到暂存区的命令还是<code>git add &lt;某文件&gt;</code>。</p>
 <p><code>git add.</code> 可以将所有修改的文件均放到暂存区。放入暂存区再修改再<code>git status</code>会发现，该文件既在暂存区又在非暂存区。因为上次的<code>git add</code>仅仅包含上次的修改。</p>
 <p>状态简览：使用命令<code>git status -s</code> 或者 <code>git status —short</code>会得到一种格式更为简洁的输出。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git status -s
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">M README              // 修改过的是 M 标记
-</span></span><span class="line"><span class="cl">MM Makefile           // A  
-</span></span><span class="line"><span class="cl">lib/git.rb            // 新添加到暂存区的是 A 标记
-</span></span><span class="line"><span class="cl">M  lib/simplegit.rb   
-</span></span><span class="line"><span class="cl">?? LICENSE.txt        // ？？表示新添加的未跟踪的文件
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="忽略文件" class="headerLink">
+<pre tabindex="0"><code>$ git status -s
+
+M README              // 修改过的是 M 标记
+MM Makefile           // A  
+lib/git.rb            // 新添加到暂存区的是 A 标记
+M  lib/simplegit.rb   
+?? LICENSE.txt        // ？？表示新添加的未跟踪的文件
+</code></pre><h2 id="忽略文件" class="headerLink">
     <a href="#%e5%bf%bd%e7%95%a5%e6%96%87%e4%bb%b6" class="header-mark"></a>9 忽略文件</h2><p>像一些日志文件、编译产生的临时文件等无用文件无需跟踪，我们就可以创建一个 <code>.gitignore</code> 文件来忽略这些文件。该文件格式规范如下：</p>
 <p>所有<code>空行</code>或者以 <code>#</code> 开头的行都会被 Git 忽略。</p>
 <p>可以使用标准的 <code>glob</code> 模式匹配，它会递归地应用在整个工作区中。</p>
@@ -351,68 +306,35 @@
 问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符， 表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。 使用两个星号（<strong>）表示匹配任意中间目录，比如 a/</strong>/z 可以匹配 a/z 、 a/b/z 或 a/b/c/z 等。</p>
 </blockquote>
 <p>我们再看一个 .gitignore 文件的例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 忽略所有的 .a 文件     *.a
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件      !lib.a
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO          /TODO
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 忽略任何目录下名为 build 的文件夹         build/
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt    doc/*.txt
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 忽略 doc/ 目录及其所有子目录下的 .pdf 文件     doc/**/*.pdf
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="查看已暂存和未暂存的修改" class="headerLink">
+<pre tabindex="0"><code># 忽略所有的 .a 文件     *.a
+
+# 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件      !lib.a
+
+# 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO          /TODO
+
+# 忽略任何目录下名为 build 的文件夹         build/
+
+# 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt    doc/*.txt
+
+# 忽略 doc/ 目录及其所有子目录下的 .pdf 文件     doc/**/*.pdf
+</code></pre><h2 id="查看已暂存和未暂存的修改" class="headerLink">
     <a href="#%e6%9f%a5%e7%9c%8b%e5%b7%b2%e6%9a%82%e5%ad%98%e5%92%8c%e6%9c%aa%e6%9a%82%e5%ad%98%e7%9a%84%e4%bf%ae%e6%94%b9" class="header-mark"></a>10 查看已暂存和未暂存的修改</h2><p><code>Git diff</code>：此命令比较的是工作目录中当前文件和暂存区域快照之间的差异。 也就是修改之后还没有暂存起来的变化内容。只显示尚未暂存的改动。</p>
 <p>若要查看已暂存的将要添加到下次提交里的内容，可以用 <code>git diff --staged</code> 命令。 这条命令将比对已暂存文件与最后一次提交的文件差异：</p>
 <h2 id="提交更新" class="headerLink">
     <a href="#%e6%8f%90%e4%ba%a4%e6%9b%b4%e6%96%b0" class="header-mark"></a>11 提交更新</h2><p><code>git commit</code>：可以看到，默认的提交消息包含最后一次运行 <code>git status</code> 的输出，放在注释行里，另外开头还有一个空行，供你输入提交说明。</p>
 <p>还可以直接：<code>git commit -m “说明信息”</code>  直接提交</p>
 <p>给 git commit 加上 <code>-a</code> 之后，可以跳过 git add. 步骤直接提交。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git commit -am &#39;commit 信息&#39;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="移除文件" class="headerLink">
+<pre tabindex="0"><code>git commit -am &#39;commit 信息&#39;
+</code></pre><h2 id="移除文件" class="headerLink">
     <a href="#%e7%a7%bb%e9%99%a4%e6%96%87%e4%bb%b6" class="header-mark"></a>12 移除文件</h2><p><code>rm XXX</code> 这样删除文件，文件会出现在未暂存清单中，再 <code>git rm XXX</code>。就不再纳入版本管理了。</p>
 <p>如果要删除之前放在暂存区的文件要加 <code>-f</code> 。</p>
 <p>如果忘记了添加忽略文件或从暂存区移除但保存在本地磁盘上且不再版本控制，可以用 <code>git rm --cached xxx</code> ，xxx 可以是文件名字还可以是目录</p>
 <h2 id="移动文件" class="headerLink">
     <a href="#%e7%a7%bb%e5%8a%a8%e6%96%87%e4%bb%b6" class="header-mark"></a>13 移动文件</h2><p><code>git mv aaa bbb</code>：相当于下面三条指令，效果一样，<code>git mv</code> 更加方便。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mv aaa bbb
-</span></span><span class="line"><span class="cl">git rm aaa
-</span></span><span class="line"><span class="cl">git add bbb 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="查看提交历史" class="headerLink">
+<pre tabindex="0"><code>mv aaa bbb
+git rm aaa
+git add bbb 
+</code></pre><h2 id="查看提交历史" class="headerLink">
     <a href="#%e6%9f%a5%e7%9c%8b%e6%8f%90%e4%ba%a4%e5%8e%86%e5%8f%b2" class="header-mark"></a>14 查看提交历史</h2><p><code>git log</code>：不传入任何参数的默认情况下，<code>git log</code> 会按时间先后顺序列出所有的提交，最近的更新排在最上面。<br>
 这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。</p>
 <p><code>-p</code> 或 <code>--patch</code> ，它会显示每次提交所引入的差异（按 补丁 的格式输出）。 <br>
@@ -420,47 +342,20 @@
 <p>还可以限制显示的日志条目数量，<code>-2</code> 选项来只显示最近的两次提交。<code>-&lt;n&gt;</code>n次</p>
 <p><code>--stat</code> 选项：可以看到每次提交的简略统计信息</p>
 <p><code>git log --pretty=format </code>：可以定制记录的显示格式。更多<a href="https://ruby-china.org/topics/939" target="_blank" rel="noopener noreffer">看这里</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git log —since=2.weeks 最近两周
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">$ git log -S function_name 它接受一个字符串参数，并且只会显示那些添加或删除了该字符串的提交。 假设你想找出添加或删除了对某一个特定函数的引用的提交，可以调用
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>来看一个实际的例子，如果要在 Git 源码库中查看 Junio Hamano 在 2008 年 10 月其间， 除了合并提交之外的哪一个提交修改了测试文件，可以使用下面的命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git log --pretty=&#34;%h - %s&#34; --author=&#39;Junio C Hamano&#39; --since=&#34;2008-10-01&#34; \
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">   --before=&#34;2008-11-01&#34; --no-merges -- t/
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="提交信息合并" class="headerLink">
+<pre tabindex="0"><code>$ git log —since=2.weeks 最近两周
+
+$ git log -S function_name 它接受一个字符串参数，并且只会显示那些添加或删除了该字符串的提交。 假设你想找出添加或删除了对某一个特定函数的引用的提交，可以调用
+</code></pre><p>来看一个实际的例子，如果要在 Git 源码库中查看 Junio Hamano 在 2008 年 10 月其间， 除了合并提交之外的哪一个提交修改了测试文件，可以使用下面的命令：</p>
+<pre tabindex="0"><code>$ git log --pretty=&#34;%h - %s&#34; --author=&#39;Junio C Hamano&#39; --since=&#34;2008-10-01&#34; \
+
+   --before=&#34;2008-11-01&#34; --no-merges -- t/
+</code></pre><h2 id="提交信息合并" class="headerLink">
     <a href="#%e6%8f%90%e4%ba%a4%e4%bf%a1%e6%81%af%e5%90%88%e5%b9%b6" class="header-mark"></a>15 提交信息合并</h2><p><code>git commit —amend</code> 会将暂存区的文件提交，如果上次提交后没有更改，只是修改提交信息。 </p>
 <p>如果有文件没有提交：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git commit -m &#39;initial commit&#39;
-</span></span><span class="line"><span class="cl">$ git add forgotten_file
-</span></span><span class="line"><span class="cl">$ git commit —amend
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>最终只会有一个提交结果，旧的提交结果就像从来没有存在过一样，保证了仓库提交历史的干净。</p>
+<pre tabindex="0"><code>$ git commit -m &#39;initial commit&#39;
+$ git add forgotten_file
+$ git commit —amend
+</code></pre><p>最终只会有一个提交结果，旧的提交结果就像从来没有存在过一样，保证了仓库提交历史的干净。</p>
 <h2 id="撤销操作" class="headerLink">
     <a href="#%e6%92%a4%e9%94%80%e6%93%8d%e4%bd%9c" class="header-mark"></a>16 撤销操作</h2><p><code>git reset</code>：将当前的分支的 HEAD 指向给定的版本，并根据参数 [&ndash;soft, &ndash;mixed, &ndash;hard] 决定对于工作区和暂存区内文件的修改。默认参数为 <code>mixed</code>。</p>
 <p><code>git reset  --soft commit_id</code>：-soft 参数仅仅会将 HEAD 回退到某个版本，不修改暂存区和工作区的内容。</p>
@@ -511,47 +406,20 @@
 <p><code>git push origin &lt;tagname&gt;</code>：向远程推送标签，这样别人拉代码时也会将标签拉下来</p>
 <p><code>git push origin —tags</code>：这将会把所有不在远程仓库服务器上的标签全部传送到那里。</p>
 <h2 id="删除标签" class="headerLink">
-    <a href="#%e5%88%a0%e9%99%a4%e6%a0%87%e7%ad%be" class="header-mark"></a>29 删除标签</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ git tag -d &lt;tagname&gt;：删除一个轻量标签，仅本地
-</span></span><span class="line"><span class="cl">$ git push &lt;remote&gt; :refs/tags/&lt;tagname&gt; 来更新你的远程仓库同步删除
-</span></span><span class="line"><span class="cl">$ git push &lt;remote&gt; :refs/tags/&lt;tagname&gt; ：变体1 将冒号前面的空值推送到远程标签名，从而高效地删除它。
-</span></span><span class="line"><span class="cl">$ git push origin --delete &lt;tagname&gt;：变体2 更直观的删除远程标签的方式
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="检出标签" class="headerLink">
+    <a href="#%e5%88%a0%e9%99%a4%e6%a0%87%e7%ad%be" class="header-mark"></a>29 删除标签</h2><pre tabindex="0"><code>$ git tag -d &lt;tagname&gt;：删除一个轻量标签，仅本地
+$ git push &lt;remote&gt; :refs/tags/&lt;tagname&gt; 来更新你的远程仓库同步删除
+$ git push &lt;remote&gt; :refs/tags/&lt;tagname&gt; ：变体1 将冒号前面的空值推送到远程标签名，从而高效地删除它。
+$ git push origin --delete &lt;tagname&gt;：变体2 更直观的删除远程标签的方式
+</code></pre><h2 id="检出标签" class="headerLink">
     <a href="#%e6%a3%80%e5%87%ba%e6%a0%87%e7%ad%be" class="header-mark"></a>30 检出标签</h2><p><code>git checkout 2.0.0</code>：查看某个标签所指向的文件版本，但是这会使你的仓库处于<code>分离头指针（detached HEAD）</code>的状态——&ndash;这个状态有些不好的副作用。在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化，但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。因此，如果你需要进行更改，比如你要修复旧版本中的错误，那么通常需要创建一个新分支：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git checkout -b version2 v2.0.0
-</span></span><span class="line"><span class="cl">switched to a new branch &#39;version2&#39;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果在这之后又进行了一次提交，version2 分支就会因为这个改动向前移动， 此时它就会和 v2.0.0 标签稍微有些不同，这时就要当心了。</p>
+<pre tabindex="0"><code>git checkout -b version2 v2.0.0
+switched to a new branch &#39;version2&#39;
+</code></pre><p>如果在这之后又进行了一次提交，version2 分支就会因为这个改动向前移动， 此时它就会和 v2.0.0 标签稍微有些不同，这时就要当心了。</p>
 <h2 id="git-命令别名" class="headerLink">
-    <a href="#git-%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d" class="header-mark"></a>31 Git 命令别名</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global alias.co checkout   git co == git checkout
-</span></span><span class="line"><span class="cl">git config --global alias.br branch	    git br == git branch		
-</span></span><span class="line"><span class="cl">git config --global alias.unstage &#39;reset HEAD —&#39;   git onstage fileA == git reset HEAD -- fileA
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="分支简介" class="headerLink">
+    <a href="#git-%e5%91%bd%e4%bb%a4%e5%88%ab%e5%90%8d" class="header-mark"></a>31 Git 命令别名</h2><pre tabindex="0"><code>git config --global alias.co checkout   git co == git checkout
+git config --global alias.br branch	    git br == git branch		
+git config --global alias.unstage &#39;reset HEAD —&#39;   git onstage fileA == git reset HEAD -- fileA
+</code></pre><h2 id="分支简介" class="headerLink">
     <a href="#%e5%88%86%e6%94%af%e7%ae%80%e4%bb%8b" class="header-mark"></a>32 分支简介</h2><p>在进行提交操作的时候，git 会保存一个提交对象，该提交对象会包含一个指向暂存内容快照的指针。以及作者的姓名邮箱、提交时输入的信息、父对象的指针等内容。   
 首次提交产生的提交对象没有父对象，普通提交操作产生的提交对象有一个父对象， 而由多个分支合并产生的提交对象有多个父对象。</p>
 <p>一个目录里面有三个文件，修改暂存提交之后。git 会计算该目录的校验和，并保存为树对象，该树对象有指向文件快照blob对象的指针。 <br>
@@ -565,42 +433,19 @@
 <p>在 aab 上做了部分修改并提交后，aab分支会向前移动指向新的提交对象，但是 master 还是原来的不变。此时再切回 master，整个工作目录会变成 master 对应的状态。在这里修改并提交，master 会向前移动，master 的向前一步走和 aab 的向前一步走就<strong>分叉</strong>了。</p>
 <p>由于 Git 的分支实质上仅是包含所指对象校验和（长度为 40 的 SHA-1 值字符串）的文件，所以它的创建和销毁都异常高效。 创建一个新分支就相当于往一个文件中写入 41 个字节（40 个字符和 1 个换行符），更加的简单高效。</p>
 <h2 id="分支的新建与合并" class="headerLink">
-    <a href="#%e5%88%86%e6%94%af%e7%9a%84%e6%96%b0%e5%bb%ba%e4%b8%8e%e5%90%88%e5%b9%b6" class="header-mark"></a>34 分支的新建与合并</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git branch xxx :      创建新分支
-</span></span><span class="line"><span class="cl">git checkout xxx :    切换到分支 xxx 上
-</span></span><span class="line"><span class="cl">git checkout -b xxx : 创建新分支并切换到新分支上。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">git merge xxx :       当前分支合并 xxx 分支。如果要合并的分支并不是当前分支的直接祖先，此时 git 就会合并两个分支的末端和两个分支的公共祖先做一个三方合并。
-</span></span><span class="line"><span class="cl">git branch -d xxx :   删除分支 xxx 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="分支管理" class="headerLink">
-    <a href="#%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" class="header-mark"></a>35 分支管理</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git branch :                        不加参数的时候会得到分支列表，列表中带有 * 的分支就是当前检出的分支，即 HEAD 指针指向的分支
-</span></span><span class="line"><span class="cl">git branch -v :                     查看每个分支的最后一次提交
-</span></span><span class="line"><span class="cl">git branch —merged :                查看已经合并到当前分支的分支
-</span></span><span class="line"><span class="cl">git branch —no-merged :             查看所有未合并工作的分支
-</span></span><span class="line"><span class="cl">git branch --no-merged master :     尚未合并到master分支上的分支有哪些
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="分支重命名" class="headerLink">
+    <a href="#%e5%88%86%e6%94%af%e7%9a%84%e6%96%b0%e5%bb%ba%e4%b8%8e%e5%90%88%e5%b9%b6" class="header-mark"></a>34 分支的新建与合并</h2><pre tabindex="0"><code>git branch xxx :      创建新分支
+git checkout xxx :    切换到分支 xxx 上
+git checkout -b xxx : 创建新分支并切换到新分支上。
+
+git merge xxx :       当前分支合并 xxx 分支。如果要合并的分支并不是当前分支的直接祖先，此时 git 就会合并两个分支的末端和两个分支的公共祖先做一个三方合并。
+git branch -d xxx :   删除分支 xxx 
+</code></pre><h2 id="分支管理" class="headerLink">
+    <a href="#%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" class="header-mark"></a>35 分支管理</h2><pre tabindex="0"><code>git branch :                        不加参数的时候会得到分支列表，列表中带有 * 的分支就是当前检出的分支，即 HEAD 指针指向的分支
+git branch -v :                     查看每个分支的最后一次提交
+git branch —merged :                查看已经合并到当前分支的分支
+git branch —no-merged :             查看所有未合并工作的分支
+git branch --no-merged master :     尚未合并到master分支上的分支有哪些
+</code></pre><h2 id="分支重命名" class="headerLink">
     <a href="#%e5%88%86%e6%94%af%e9%87%8d%e5%91%bd%e5%90%8d" class="header-mark"></a>36 分支重命名</h2><p>本地: <code>git branch -m oldName newName</code></p>
 <p>远程:</p>
 <ol>
@@ -612,41 +457,19 @@
 <h2 id="远程分支" class="headerLink">
     <a href="#%e8%bf%9c%e7%a8%8b%e5%88%86%e6%94%af" class="header-mark"></a>37 远程分支</h2><p>远程跟踪分支是远程分支状态的引用。它们是你无法移动的本地引用。一旦你进行了网络通信，Git 就会为你移动它们以精确反映远程仓库的状态。该分支在远程仓库中的位置就是你最后一次连接到它们的位置。如果在你工作的时候，别人向远程仓库推送了新的提交，那么远程仓库的 master 会更新。但是我们的 origin/master 分支并不会移动，还是我们之前与远程仓库通信时的位置。</p>
 <p>假设你的网络里有一个在 git.ourcompany.com 的 Git 服务器。如果你从这里克隆，Git的 clone 命令会为你自动将其命名为 origin，拉取它的所有数据，创建一个指向的 master 分支的指针，并且在本地将其命名为 origin/master。 Git 也会给你一个与 origin的 master 分支在指向同一个地方的本地 master 分支。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git fecth orgin:                       用来拉取远程仓库的最新的修改数据，移动 origin/master 到更新后位置
-</span></span><span class="line"><span class="cl">git merge orgin:                       将拉取的数据与当前的本地数据合并
-</span></span><span class="line"><span class="cl">git push origin serverfix:             将本地的 serverfix 分支来更新远程仓库上的 serverfix
-</span></span><span class="line"><span class="cl">git push origin serverfix:serverfix:   效果一样
-</span></span><span class="line"><span class="cl">git push origin serverfix:a:           将本地分支 serverfix 推送到远程 a 分支上
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="跟踪分支" class="headerLink">
+<pre tabindex="0"><code>git fecth orgin:                       用来拉取远程仓库的最新的修改数据，移动 origin/master 到更新后位置
+git merge orgin:                       将拉取的数据与当前的本地数据合并
+git push origin serverfix:             将本地的 serverfix 分支来更新远程仓库上的 serverfix
+git push origin serverfix:serverfix:   效果一样
+git push origin serverfix:a:           将本地分支 serverfix 推送到远程 a 分支上
+</code></pre><h2 id="跟踪分支" class="headerLink">
     <a href="#%e8%b7%9f%e8%b8%aa%e5%88%86%e6%94%af" class="header-mark"></a>38 跟踪分支</h2><p>克隆仓库时，自动创建的 master 分支就是默认跟踪的 origin/master 分支，执行 git pull 后自动的去 origin/master 上拉取数据并合并到master分支上。跟踪分支后就知道了去那个服务器拉取数据，合并到那个分支上面。当然，可以手动设置让分支跟踪那个分支。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git checkout --track origin/serverfix:   设置分支 serverfix 跟踪远程仓库中的分支 serverfix
-</span></span><span class="line"><span class="cl">git checkout serverfix:                  如果你尝试检出的分支 (a) 不存在且 (b) 刚好只有一个名字与之匹配的远程分支
-</span></span><span class="line"><span class="cl">git checkout -b sf origin/serverfix :    将本地分支与远程分支设置为不同的名字,sf 会从 origin/serverfix 上面拉取数据
-</span></span><span class="line"><span class="cl">git branch -vv:                          可以查看设置的所有跟踪分支，还有分支所跟踪的远程分支与本地分支是否领先还是落后
-</span></span><span class="line"><span class="cl">git push origin --delete serverfix:      删除远程分支
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="变基" class="headerLink">
+<pre tabindex="0"><code>git checkout --track origin/serverfix:   设置分支 serverfix 跟踪远程仓库中的分支 serverfix
+git checkout serverfix:                  如果你尝试检出的分支 (a) 不存在且 (b) 刚好只有一个名字与之匹配的远程分支
+git checkout -b sf origin/serverfix :    将本地分支与远程分支设置为不同的名字,sf 会从 origin/serverfix 上面拉取数据
+git branch -vv:                          可以查看设置的所有跟踪分支，还有分支所跟踪的远程分支与本地分支是否领先还是落后
+git push origin --delete serverfix:      删除远程分支
+</code></pre><h2 id="变基" class="headerLink">
     <a href="#%e5%8f%98%e5%9f%ba" class="header-mark"></a>39 变基</h2><p><code>变基</code>：<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA" target="_blank" rel="noopener noreffer">详见</a></p>
 <h2 id="cherry-pick" class="headerLink">
     <a href="#cherry-pick" class="header-mark"></a>40 cherry-pick</h2><p><code>git cherry-pick &lt;commitHash&gt;</code>：上面命令就会将指定的提交commitHash，应用于当前分支。这会在当前分支产生一个新的提交，当然它们的哈希值会不一样。</p></div>
@@ -655,7 +478,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-08-14</span>
+                <span>更新于 2022-08-18</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -663,7 +486,7 @@
             <div class="post-info-md"><span><a class="link-to-mardown" href=/git/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
                     </span></div>
             <div class="post-info-share">
-                <span><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="https://jino0.github.io/git/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://jino0.github.io/git/" data-title="git"><i class="fab fa-hacker-news fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Line" data-sharer="line" data-url="https://jino0.github.io/git/" data-title="git"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://jino0.github.io/git/" data-title="git" data-image="elephant-3458033__480.jpeg" data-ralateuid="hot"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Telegram" data-sharer="telegram" data-url="https://jino0.github.io/git/" data-title="git" data-web><i class="fab fa-telegram-plane fa-fw"></i></a></span>
+                <span><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="https://jino0.github.io/git/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://jino0.github.io/git/" data-title="git pro 读书笔记"><i class="fab fa-hacker-news fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Line" data-sharer="line" data-url="https://jino0.github.io/git/" data-title="git pro 读书笔记"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://jino0.github.io/git/" data-title="git pro 读书笔记" data-image="elephant-3458033__480.jpeg" data-ralateuid="hot"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Telegram" data-sharer="telegram" data-url="https://jino0.github.io/git/" data-title="git pro 读书笔记" data-web><i class="fab fa-telegram-plane fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -675,7 +498,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/mac-hugo/" class="prev" rel="prev" title="Mac&#43;hugo&#43;github搭建个人博客"><i class="fas fa-angle-left fa-fw"></i>Mac&#43;hugo&#43;github搭建个人博客</a></div>
+    <div class="post-nav"><a href="/mac-hugo/" class="prev" rel="prev" title="Mac&#43;hugo&#43;github 搭建个人博客"><i class="fas fa-angle-left fa-fw"></i>Mac&#43;hugo&#43;github 搭建个人博客</a>
+            <a href="/linkedlist/" class="next" rel="next" title="链表那个链">链表那个链<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
@@ -685,8 +509,36 @@
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
                     由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jino0.github.io" target="_blank" rel="noopener noreferrer">jino0</a></span></div>
-            <div class="footer-line"></div>
+                </div><div class="footer-line">
+                
+
+                </div>
+
+            
+
+            <div class="footer-line">
+                <span id="runtime_span">网站已在风雨中运行:267天23小时45分40秒</span>
+                <script type="text/javascript">function show_runtime(){
+                    window.setTimeout("show_runtime()",1000);
+                    X=new Date("8/2/2022 11:27:50");
+                    Y=new Date();
+                    T=(Y.getTime()-X.getTime());
+                    M=24*60*60*1000;a=T/M;
+                    A=Math.floor(a);b=(a-A)*24;
+                    B=Math.floor(b);c=(b-B)*60;
+                    C=Math.floor((b-B)*60);
+                    D=Math.floor((c-C)*60);
+                    runtime_span.innerHTML="本船舶已在知识海洋航行："+A+" 天 "+B+" 小时 "+C+" 分 "+D+" 秒 "}show_runtime();
+                </script>
+            </div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="site-pv" title="总访问量">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                        <span class="site-pv" title="总访问量">本站访客数<span id="busuanzi_value_site_uv"></span>次</span>
+                        
+                    </span></div>
+
             <div class="footer-line">
             </div>
         </div></footer></div>

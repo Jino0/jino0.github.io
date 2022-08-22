@@ -3,8 +3,26 @@
         <title>所有文章 - jino0’s bBlog</title>
         <link>https://jino0.github.io/posts/</link>
         <description>所有文章 | jino0’s bBlog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 14 Aug 2022 16:08:03 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Mac&#43;hugo&#43;github搭建个人博客</title>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 16:50:10 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>链表那个链</title>
+    <link>https://jino0.github.io/linkedlist/</link>
+    <pubDate>Thu, 18 Aug 2022 23:50:36 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/linkedlist/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/balloons.jpeg" referrerpolicy="no-referrer">
+            </div><p>本文中介绍些链表相关的高频算法题，LeetCode 实战分享。</p>]]></description>
+</item><item>
+    <title>git pro 读书笔记</title>
+    <link>https://jino0.github.io/git/</link>
+    <pubDate>Sun, 14 Aug 2022 16:08:03 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/git/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/elephant-3458033__480.jpeg" referrerpolicy="no-referrer">
+            </div><p>介绍 git 相关使用方法，一些命令的介绍。也是 <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreffer">git pro 读书笔记</a>。</p>]]></description>
+</item><item>
+    <title>Mac&#43;hugo&#43;github 搭建个人博客</title>
     <link>https://jino0.github.io/mac-hugo/</link>
     <pubDate>Fri, 05 Aug 2022 14:37:23 &#43;0800</pubDate><author>
         <name>jino0</name>

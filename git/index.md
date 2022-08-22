@@ -1,4 +1,4 @@
-# git
+# git pro 读书笔记
 
 
   介绍 git 相关使用方法，一些命令的介绍。也是 [git pro 读书笔记](https://git-scm.com/book/en/v2)。

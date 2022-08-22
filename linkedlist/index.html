@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">链表那个链 - jino0’s bBlog</title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="链表那个链" />
+<meta property="og:description" content="本文中介绍些链表相关的高频算法题，LeetCode 实战分享。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jino0.github.io/linkedlist/" /><meta property="og:image" content="https://jino0.github.io/images/avatar.webp"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-18T23:50:36+08:00" />
+<meta property="article:modified_time" content="2022-08-21T16:50:10+08:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jino0.github.io/images/avatar.webp"/>
+
+<meta name="twitter:title" content="链表那个链"/>
+<meta name="twitter:description" content="本文中介绍些链表相关的高频算法题，LeetCode 实战分享。"/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jino0.github.io/linkedlist/" /><link rel="prev" href="https://jino0.github.io/git/" /><link rel="next" href="https://jino0.github.io/string/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "链表那个链",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jino0.github.io\/linkedlist\/"
+        },"image": ["https:\/\/jino0.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Linked List","wordcount":  2159 ,
+        "url": "https:\/\/jino0.github.io\/linkedlist\/","datePublished": "2022-08-18T23:50:36+08:00","dateModified": "2022-08-21T16:50:10+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/jino0.github.io\/images\/avatar.webp",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "jino0"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="jino0’s bBlog"><img
+        class="lazyload logo"
+        data-src="/images/camel.png"
+        data-srcset="/images/camel.png, /images/camel.png 1.5x, /images/camel.png 2x"
+        data-sizes="auto"
+        alt="/images/camel.png"
+        title="/images/camel.png"><span class="header-title-pre">  </span>jino0’s bBlog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="ss"> 所有 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/series/"> 系列 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" title="Select Language" id="language-select-desktop" onchange="location = this.value;"><option value="/linkedlist/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="jino0’s bBlog"><img
+        class="lazyload logo"
+        data-src="/images/camel.png"
+        data-srcset="/images/camel.png, /images/camel.png 1.5x, /images/camel.png 2x"
+        data-sizes="auto"
+        alt="/images/camel.png"
+        title="/images/camel.png"><span class="header-title-pre">  </span>jino0’s bBlog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="ss">所有</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/series/" title="">系列</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="#" onclick="return false;" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" title="Select Language" onchange="location = this.value;"><option value="/linkedlist/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#回文链表">回文链表</a>
+      <ul>
+        <li><a href="#递归遍历">递归遍历</a></li>
+        <li><a href="#快慢指针">快慢指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#反转链表">反转链表</a>
+      <ul>
+        <li><a href="#递归反转">递归反转</a></li>
+        <li><a href="#三个指针">三个指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#合并k个升序链表">合并K个升序链表</a>
+      <ul>
+        <li><a href="#归并排序思想">归并排序思想</a></li>
+      </ul>
+    </li>
+    <li><a href="#k-个一组翻转链表">K 个一组翻转链表</a>
+      <ul>
+        <li><a href="#分批来">分批来</a></li>
+      </ul>
+    </li>
+    <li><a href="#环形链表">环形链表</a>
+      <ul>
+        <li><a href="#快慢指针-1">快慢指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序链表">排序链表</a></li>
+    <li><a href="#相交链表">相交链表</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">链表那个链</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://jino0.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">jino0</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>LeetCode</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-18">2022-08-18</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2159 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/linkedlist/" class="leancloud_visitors" data-flag-title="链表那个链">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/linkedlist/" class="comment_count" data-flag-title="链表那个链">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        data-src="/linkedlist/balloons.jpeg"
+        data-srcset="/linkedlist/balloons.jpeg, /linkedlist/balloons.jpeg 1.5x, /linkedlist/balloons.jpeg 2x"
+        data-sizes="auto"
+        alt="/linkedlist/balloons.jpeg"
+        title="/linkedlist/balloons.jpeg" height="800" width="1280"></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#回文链表">回文链表</a>
+      <ul>
+        <li><a href="#递归遍历">递归遍历</a></li>
+        <li><a href="#快慢指针">快慢指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#反转链表">反转链表</a>
+      <ul>
+        <li><a href="#递归反转">递归反转</a></li>
+        <li><a href="#三个指针">三个指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#合并k个升序链表">合并K个升序链表</a>
+      <ul>
+        <li><a href="#归并排序思想">归并排序思想</a></li>
+      </ul>
+    </li>
+    <li><a href="#k-个一组翻转链表">K 个一组翻转链表</a>
+      <ul>
+        <li><a href="#分批来">分批来</a></li>
+      </ul>
+    </li>
+    <li><a href="#环形链表">环形链表</a>
+      <ul>
+        <li><a href="#快慢指针-1">快慢指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#排序链表">排序链表</a></li>
+    <li><a href="#相交链表">相交链表</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本文中介绍些链表相关的高频算法题，LeetCode 实战分享。</p>
+<h2 id="回文链表" class="headerLink">
+    <a href="#%e5%9b%9e%e6%96%87%e9%93%be%e8%a1%a8" class="header-mark"></a>1 回文链表</h2><p>👉 <a href="https://link.juejin.cn/?target=https%3A%2F%2Fleetcode-cn.com%2Fproblems%2Fpalindrome-linked-list%2F" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：234 回文链表（简单）</a>  <br>
+给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。  <br>
+<img
+        class="lazyload"
+        data-src="LeetCode-234.png"
+        data-srcset="/linkedlist/LeetCode-234.png, LeetCode-234.png 1.5x, /linkedlist/LeetCode-234.png 2x"
+        data-sizes="auto"
+        alt="/linkedlist/LeetCode-234.png"
+        title="LeetCode-234"></p>
+<h3 id="递归遍历" class="headerLink">
+    <a href="#%e9%80%92%e5%bd%92%e9%81%8d%e5%8e%86" class="header-mark"></a>1.1 递归遍历</h3><p>利用链表的后续遍历，使用函数调用栈作为后序遍历栈，来判断是否回文。</p>
+<p>递归到最后之后，最后一个跟头节点比较，然后递归回退一个，头节点往下走，依次实现，第几个和倒数第几个实现一个比较。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">left</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">isPalindrome</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">left</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">traverse</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">traverse</span><span class="p">(</span><span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">right</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">traverse</span><span class="p">(</span><span class="nx">right</span><span class="p">.</span><span class="nx">next</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span> <span class="o">=</span> <span class="nx">res</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">right</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">left</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">left</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="快慢指针" class="headerLink">
+    <a href="#%e5%bf%ab%e6%85%a2%e6%8c%87%e9%92%88" class="header-mark"></a>1.2 快慢指针</h3><p>通过 快、慢指针找链表中点，然后反转链表，比较两个链表两侧是否相等，来判断是否是回文链表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">isPalindrome</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 反转 slower 链表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">findCenter</span><span class="p">(</span><span class="nx">head</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 开始比较
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="nx">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">val</span> <span class="o">!==</span> <span class="nx">right</span><span class="p">.</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">left</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">right</span> <span class="o">=</span> <span class="nx">right</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">findCenter</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">slower</span> <span class="o">=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">faster</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">faster</span> <span class="o">&amp;&amp;</span> <span class="nx">faster</span><span class="p">.</span><span class="nx">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slower</span> <span class="o">=</span> <span class="nx">slower</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">faster</span> <span class="o">=</span> <span class="nx">faster</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 如果 faster 不等于 null，说明是奇数个，slower 再移动一格
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">faster</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slower</span> <span class="o">=</span> <span class="nx">slower</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">slower</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">prev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">prev</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cur</span> <span class="o">=</span> <span class="nx">nxt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">prev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="反转链表" class="headerLink">
+    <a href="#%e5%8f%8d%e8%bd%ac%e9%93%be%e8%a1%a8" class="header-mark"></a>2 反转链表</h2><p> <a href="https://leetcode.cn/problems/reverse-linked-list/" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：206 反转链表（简单）</a> 给你单链表的头节点 Head，请你反转链表，并返回反转后的链表。
+<img
+        class="lazyload"
+        data-src="LeetCode-206.png"
+        data-srcset="/linkedlist/LeetCode-206.png, LeetCode-206.png 1.5x, /linkedlist/LeetCode-206.png 2x"
+        data-sizes="auto"
+        alt="/linkedlist/LeetCode-206.png"
+        title="/linkedlist/LeetCode-206.png"></p>
+<h3 id="递归反转" class="headerLink">
+    <a href="#%e9%80%92%e5%bd%92%e5%8f%8d%e8%bd%ac" class="header-mark"></a>2.1 递归反转</h3><p>利用递归走到最后一个之后，让最后一个成为第一个。断开最后一个和倒数第二个的连接，return 最后一个，此时得到的应该是就是最后一个变成头的链表。<br>
+利用递归的特性，再依次使得倒数第二个变成头，倒数第三个变成头，倒数&hellip;&hellip; 即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">reverseList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">last</span> <span class="o">=</span> <span class="nx">reverseList</span><span class="p">(</span><span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">head</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">last</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="三个指针" class="headerLink">
+    <a href="#%e4%b8%89%e4%b8%aa%e6%8c%87%e9%92%88" class="header-mark"></a>2.2 三个指针</h3><p>当前节点，前一个节点，后一个节点，三个指针完成链表的反转，并依次移动。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">reverseList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>    <span class="c1">// 往后走
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">prev</span><span class="p">;</span>   <span class="c1">// 更新连接  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">prev</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>        <span class="c1">// 往前走
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">cur</span> <span class="o">=</span> <span class="nx">nxt</span><span class="p">;</span>         <span class="c1">// 往前走
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">prev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="合并k个升序链表" class="headerLink">
+    <a href="#%e5%90%88%e5%b9%b6k%e4%b8%aa%e5%8d%87%e5%ba%8f%e9%93%be%e8%a1%a8" class="header-mark"></a>3 合并K个升序链表</h2><p><a href="https://leetcode.cn/problems/merge-k-sorted-lists/" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：23 合并K个升序链表（困难）</a></p>
+<p>给你一个链表数组，每个链表都已经按升序排列。请你将所有链表合并到一个升序链表中，返回合并后的链表。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">1</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="err">：</span><span class="nx">lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="err">：</span><span class="nx">链表数组如下</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="mi">1</span><span class="o">-&gt;</span><span class="mi">4</span><span class="o">-&gt;</span><span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="mi">1</span><span class="o">-&gt;</span><span class="mi">3</span><span class="o">-&gt;</span><span class="mi">4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="mi">2</span><span class="o">-&gt;</span><span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">将它们合并到一个有序链表中得到</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span><span class="o">-&gt;</span><span class="mi">1</span><span class="o">-&gt;</span><span class="mi">2</span><span class="o">-&gt;</span><span class="mi">3</span><span class="o">-&gt;</span><span class="mi">4</span><span class="o">-&gt;</span><span class="mi">4</span><span class="o">-&gt;</span><span class="mi">5</span><span class="o">-&gt;</span><span class="mi">6</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="归并排序思想" class="headerLink">
+    <a href="#%e5%bd%92%e5%b9%b6%e6%8e%92%e5%ba%8f%e6%80%9d%e6%83%b3" class="header-mark"></a>3.1 归并排序思想</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">mergeKLists</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">lists</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">lists</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">mergeArr</span><span class="p">(</span><span class="nx">lists</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">mergeArr</span><span class="p">(</span><span class="nx">lists</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">lists</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">lists</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">lists</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">mergeArr</span><span class="p">(</span><span class="nx">lists</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">index</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">mergeArr</span><span class="p">(</span><span class="nx">lists</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">index</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">l1</span><span class="p">,</span> <span class="nx">l2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">l1</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">l2</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">l1</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">l2</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">l1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">l1</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">l2</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">l2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">newHead</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">head</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">l1</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">l2</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">l1</span><span class="p">.</span><span class="nx">val</span> <span class="o">&lt;</span> <span class="nx">l2</span><span class="p">.</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">l1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">head</span> <span class="o">=</span> <span class="nx">l1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">l1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">l1</span> <span class="o">=</span> <span class="nx">l1</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">l2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">head</span> <span class="o">=</span> <span class="nx">l2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">l2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">l2</span> <span class="o">=</span> <span class="nx">l2</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">l1</span> <span class="o">?</span> <span class="nx">l1</span> <span class="o">:</span> <span class="nx">l2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="k-个一组翻转链表" class="headerLink">
+    <a href="#k-%e4%b8%aa%e4%b8%80%e7%bb%84%e7%bf%bb%e8%bd%ac%e9%93%be%e8%a1%a8" class="header-mark"></a>4 K 个一组翻转链表</h2><p><a href="https://leetcode.cn/problems/reverse-nodes-in-k-group/" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：25 K 个一组翻转链表（困难）</a></p>
+<p>给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。</p>
+<p>k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">1</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="err">：</span><span class="nx">head</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="nx">k</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        data-src="reverse_ex1.jpeg"
+        data-srcset="/linkedlist/reverse_ex1.jpeg, reverse_ex1.jpeg 1.5x, /linkedlist/reverse_ex1.jpeg 2x"
+        data-sizes="auto"
+        alt="/linkedlist/reverse_ex1.jpeg"
+        title="/linkedlist/reverse_ex1.jpeg"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">2</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="err">：</span><span class="nx">head</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="nx">k</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>   
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        data-src="reverse_ex2.jpeg"
+        data-srcset="/linkedlist/reverse_ex2.jpeg, reverse_ex2.jpeg 1.5x, /linkedlist/reverse_ex2.jpeg 2x"
+        data-sizes="auto"
+        alt="/linkedlist/reverse_ex2.jpeg"
+        title="/linkedlist/reverse_ex2.jpeg"></p>
+<h3 id="分批来" class="headerLink">
+    <a href="#%e5%88%86%e6%89%b9%e6%9d%a5" class="header-mark"></a>4.1 分批来</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Definition for singly-linked list.
+</span></span></span><span class="line"><span class="cl"><span class="cm">* function ListNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.next = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">* }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*//**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {ListNode} head
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {number} k
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @return {ListNode}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">reverseKGroup</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">k</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">b</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">b</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">a</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">reverseKGroup</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">k</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">newHead</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">!=</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">prev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">prev</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">cur</span> <span class="o">=</span> <span class="nx">nxt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">prev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="环形链表" class="headerLink">
+    <a href="#%e7%8e%af%e5%bd%a2%e9%93%be%e8%a1%a8" class="header-mark"></a>5 环形链表</h2><p><a href="https://leetcode-cn.com/problems/linked-list-cycle" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：141 环形链表（简单）</a></p>
+<p><img
+        class="lazyload"
+        data-src="LeetCode-141.png"
+        data-srcset="/linkedlist/LeetCode-141.png, LeetCode-141.png 1.5x, /linkedlist/LeetCode-141.png 2x"
+        data-sizes="auto"
+        alt="/linkedlist/LeetCode-141.png"
+        title="/linkedlist/LeetCode-141.png"></p>
+<h3 id="快慢指针-1" class="headerLink">
+    <a href="#%e5%bf%ab%e6%85%a2%e6%8c%87%e9%92%88-1" class="header-mark"></a>5.1 快慢指针</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * Definition for singly-linked list.
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * function ListNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">    *     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    *     this.next = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * }
+</span></span></span><span class="line"><span class="cl"><span class="cm">    *//**
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * @param {ListNode} head
+</span></span></span><span class="line"><span class="cl"><span class="cm">    * @return {boolean}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">hasCycle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">head</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">slower</span> <span class="o">=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">faster</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">faster</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">faster</span><span class="p">.</span><span class="nx">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slower</span> <span class="o">=</span> <span class="nx">slower</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">faster</span> <span class="o">=</span> <span class="nx">faster</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">slower</span> <span class="o">===</span> <span class="nx">faster</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="排序链表" class="headerLink">
+    <a href="#%e6%8e%92%e5%ba%8f%e9%93%be%e8%a1%a8" class="header-mark"></a>6 排序链表</h2><p> <a href="https://leetcode-cn.com/problems/sort-list" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：148 排序链表（中等）</a></p>
+<p>给你链表的头节点，请你将其按照 <code>升序</code> 排序后，返回。
+<img
+        class="lazyload"
+        data-src="LeetCode-148.png"
+        data-srcset="LeetCode-148.png, LeetCode-148.png 1.5x, LeetCode-148.png 2x"
+        data-sizes="auto"
+        alt="LeetCode-148.png"
+        title="LeetCode-148.png"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">sortList</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">head</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">head</span><span class="p">.</span><span class="nx">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">slower</span> <span class="o">=</span> <span class="nx">getCenter</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">nxt</span> <span class="o">=</span> <span class="nx">slower</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slower</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">head</span><span class="p">,</span> <span class="nx">slower</span><span class="p">,</span> <span class="nx">nxt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">mergeSort</span><span class="p">(</span><span class="nx">nxt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">head</span> <span class="o">=</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">newHead</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">head</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">left</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">val</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">head</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">left</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">head</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">newHead</span> <span class="o">=</span> <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">right</span> <span class="o">=</span> <span class="nx">right</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">newHead</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">left</span> <span class="o">?</span> <span class="nx">left</span> <span class="o">:</span> <span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getCenter</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">slower</span> <span class="o">=</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">faster</span> <span class="o">=</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">faster</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">faster</span><span class="p">.</span><span class="nx">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">slower</span> <span class="o">=</span> <span class="nx">slower</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">faster</span> <span class="o">=</span> <span class="nx">faster</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">slower</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="相交链表" class="headerLink">
+    <a href="#%e7%9b%b8%e4%ba%a4%e9%93%be%e8%a1%a8" class="header-mark"></a>7 相交链表</h2><p><a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：160 相交链表（简单）</a></p>
+<p><img
+        class="lazyload"
+        data-src="LeetCode-160.png"
+        data-srcset="/linkedlist/LeetCode-160.png, LeetCode-160.png 1.5x, /linkedlist/LeetCode-160.png 2x"
+        data-sizes="auto"
+        alt="/linkedlist/LeetCode-160.png"
+        title="/linkedlist/LeetCode-160.png"></p>
+<p>两个链表以步伐一，开始跑，跑到底就再从另个一头节点开始跑。
+如果两个链表相交，那么终会在某节点相等。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">getIntersectionNode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">headA</span><span class="p">,</span> <span class="nx">headB</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">lastHeadA</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">lastHeadB</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">originHeadA</span> <span class="o">=</span> <span class="nx">headA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">originHeadB</span> <span class="o">=</span> <span class="nx">headB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">headA</span> <span class="o">||</span> <span class="o">!</span><span class="nx">headB</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">headB</span> <span class="o">==</span> <span class="nx">headA</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">headB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">headA</span> <span class="o">&amp;&amp;</span> <span class="nx">headA</span><span class="p">.</span><span class="nx">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">lastHeadA</span> <span class="o">=</span> <span class="nx">headA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">headA</span> <span class="o">=</span> <span class="nx">originHeadB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">headA</span> <span class="o">=</span> <span class="nx">headA</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">headB</span> <span class="o">&amp;&amp;</span> <span class="nx">headB</span><span class="p">.</span><span class="nx">next</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">lastHeadB</span> <span class="o">=</span> <span class="nx">headB</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">headB</span> <span class="o">=</span> <span class="nx">originHeadA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">headB</span> <span class="o">=</span> <span class="nx">headB</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">lastHeadA</span> <span class="o">&amp;&amp;</span> <span class="nx">lastHeadB</span> <span class="o">&amp;&amp;</span> <span class="nx">lastHeadA</span> <span class="o">!=</span> <span class="nx">lastHeadB</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/linkedlist/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="https://jino0.github.io/linkedlist/" data-hashtag="Linked List"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://jino0.github.io/linkedlist/" data-title="链表那个链"><i class="fab fa-hacker-news fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Line" data-sharer="line" data-url="https://jino0.github.io/linkedlist/" data-title="链表那个链"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://jino0.github.io/linkedlist/" data-title="链表那个链" data-image="balloons.jpeg" data-ralateuid="hot"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Telegram" data-sharer="telegram" data-url="https://jino0.github.io/linkedlist/" data-title="链表那个链" data-web><i class="fab fa-telegram-plane fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linked-list/">Linked List</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/git/" class="prev" rel="prev" title="git pro 读书笔记"><i class="fas fa-angle-left fa-fw"></i>git pro 读书笔记</a>
+            <a href="/string/" class="next" rel="next" title="字符串那个串">字符串那个串<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line">
+                
+
+                </div>
+
+            
+
+            <div class="footer-line">
+                <span id="runtime_span">网站已在风雨中运行:267天23小时45分40秒</span>
+                <script type="text/javascript">function show_runtime(){
+                    window.setTimeout("show_runtime()",1000);
+                    X=new Date("8/2/2022 11:27:50");
+                    Y=new Date();
+                    T=(Y.getTime()-X.getTime());
+                    M=24*60*60*1000;a=T/M;
+                    A=Math.floor(a);b=(a-A)*24;
+                    B=Math.floor(b);c=(b-B)*60;
+                    C=Math.floor((b-B)*60);
+                    D=Math.floor((c-C)*60);
+                    runtime_span.innerHTML="本船舶已在知识海洋航行："+A+" 天 "+B+" 小时 "+C+" 分 "+D+" 秒 "}show_runtime();
+                </script>
+            </div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="site-pv" title="总访问量">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                        <span class="site-pv" title="总访问量">本站访客数<span id="busuanzi_value_site_uv"></span>次</span>
+                        
+                    </span></div>
+
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://doit-docs-comment-twikoo.vercel.app/","lang":"zh-cn"},"valine":{"appId":"","appKey":"","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"你的评论 ...","recordIP":false,"visitor":true}},"search":{"algoliaAppID":"5YGRNRQK1G","algoliaIndex":"zh_cn_index","algoliaSearchKey":"0ff6874805de24b84aa1d5ebccad56cd","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/valine/Valine.min.js" defer></script><script type="text/javascript" src="/js/valine.min.js" defer></script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.js" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><link rel="stylesheet" href="/lib/valine/valine.min.css"></div>
+</body>
+
+</html>
