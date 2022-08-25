@@ -3,7 +3,25 @@
         <title>所有文章 - jino0’s bBlog</title>
         <link>https://jino0.github.io/posts/</link>
         <description>所有文章 | jino0’s bBlog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 16:50:10 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 24 Aug 2022 00:06:11 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>数组的那个组</title>
+    <link>https://jino0.github.io/array/</link>
+    <pubDate>Wed, 24 Aug 2022 00:06:11 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/array/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hot-air-balloon-590126_1280.jpeg" referrerpolicy="no-referrer">
+            </div><p>本文中介绍些数组相关的高频算法题，LeetCode 实战分享。</p>]]></description>
+</item><item>
+    <title>字符串那个串</title>
+    <link>https://jino0.github.io/string/</link>
+    <pubDate>Sun, 21 Aug 2022 16:50:10 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/string/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hot-air-ballon-5528622__480.jpeg" referrerpolicy="no-referrer">
+            </div><p>本文中介绍些字符串相关的高频算法题，LeetCode 实战分享。</p>]]></description>
+</item><item>
     <title>链表那个链</title>
     <link>https://jino0.github.io/linkedlist/</link>
     <pubDate>Thu, 18 Aug 2022 23:50:36 &#43;0800</pubDate><author>

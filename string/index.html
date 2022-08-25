@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title class="pjax-title">字符串那个串 - jino0’s bBlog</title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="字符串那个串" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="本文中介绍些字符串相关的高频算法题，LeetCode 实战分享。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jino0.github.io/string/" /><meta property="og:image" content="https://jino0.github.io/images/avatar.webp"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-21T16:50:10+08:00" />
-<meta property="article:modified_time" content="2022-08-21T16:50:10+08:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
+<meta property="article:modified_time" content="2022-08-24T00:06:10+08:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jino0.github.io/images/avatar.webp"/>
 
 <meta name="twitter:title" content="字符串那个串"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="本文中介绍些字符串相关的高频算法题，LeetCode 实战分享。"/>
 <meta name="application-name" content="DoIt">
 <meta name="apple-mobile-web-app-title" content="DoIt">
 
 <meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jino0.github.io/string/" /><link rel="prev" href="https://jino0.github.io/linkedlist/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jino0.github.io/string/" /><link rel="prev" href="https://jino0.github.io/linkedlist/" /><link rel="next" href="https://jino0.github.io/array/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
     {
@@ -33,8 +33,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jino0.github.io\/string\/"
-        },"image": ["https:\/\/jino0.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "String","wordcount":  1248 ,
-        "url": "https:\/\/jino0.github.io\/string\/","datePublished": "2022-08-21T16:50:10+08:00","dateModified": "2022-08-21T16:50:10+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["https:\/\/jino0.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "String","wordcount":  1740 ,
+        "url": "https:\/\/jino0.github.io\/string\/","datePublished": "2022-08-21T16:50:10+08:00","dateModified": "2022-08-24T00:06:10+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -138,14 +138,22 @@
         <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
   <ul>
     <li><a href="#最长回文子串双指针">最长回文子串【双指针】</a></li>
+    <li><a href="#最长公共前缀双指针">最长公共前缀【双指针】</a>
+      <ul>
+        <li><a href="#遍历两两依次比">遍历两两依次比</a></li>
+        <li><a href="#判断是否为子串">判断是否为子串</a></li>
+      </ul>
+    </li>
+    <li><a href="#无重复字符的最长子串双指针">无重复字符的最长子串【双指针】</a></li>
+    <li><a href="#最小覆盖子串">最小覆盖子串</a></li>
   </ul>
 </nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">字符串那个串</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://jino0.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">jino0</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>LeetCode</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1248 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/string/" class="leancloud_visitors" data-flag-title="字符串那个串">
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>Leetcode</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-24">2022-08-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1740 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/string/" class="leancloud_visitors" data-flag-title="字符串那个串">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
                     </span>&nbsp;<span id="/string/" class="comment_count" data-flag-title="字符串那个串">
                         <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
@@ -164,9 +172,18 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#最长回文子串双指针">最长回文子串【双指针】</a></li>
+    <li><a href="#最长公共前缀双指针">最长公共前缀【双指针】</a>
+      <ul>
+        <li><a href="#遍历两两依次比">遍历两两依次比</a></li>
+        <li><a href="#判断是否为子串">判断是否为子串</a></li>
+      </ul>
+    </li>
+    <li><a href="#无重复字符的最长子串双指针">无重复字符的最长子串【双指针】</a></li>
+    <li><a href="#最小覆盖子串">最小覆盖子串</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="最长回文子串双指针" class="headerLink">
+            </div><div class="content" id="content"><p>本文中介绍些字符串相关的高频算法题，LeetCode 实战分享。</p>
+<h2 id="最长回文子串双指针" class="headerLink">
     <a href="#%e6%9c%80%e9%95%bf%e5%9b%9e%e6%96%87%e5%ad%90%e4%b8%b2%e5%8f%8c%e6%8c%87%e9%92%88" class="header-mark"></a>1 最长回文子串【双指针】</h2><p><a href="https://leetcode-cn.com/problems/longest-palindromic-substring" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：5 最长回文子串（中等）</a></p>
 <p>给你一个字符串 s，找到 s 中最长的回文子串。</p>
 <div class="highlight"><div class="chroma">
@@ -191,7 +208,10 @@
 </span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span><span class="s2">&#34;bb&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><p>思路：首先是奇数和偶数的不同，即 aba 和 abba 两种情况，是两种思路和算法。核心是判断<strong>左右两侧是否相等</strong>。  <br>
+利用 for 循环开始遍历，从 i 开始依次向左、右，左-k 与 右+k 依次比较，相等就是回文看回文的长度。 <br>
+情况二就是从 i 和 i+1 开始依次比较，获取长度。</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -245,9 +265,21 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>
-<p>9、**最长公共前缀【双指针】**👉 <a href="https://link.juejin.cn/?target=https%3A%2F%2Fleetcode-cn.com%2Fproblems%2Flongest-common-prefix%2F" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：14 最长公共前缀（简单）</a></p>
+</div><h2 id="最长公共前缀双指针" class="headerLink">
+    <a href="#%e6%9c%80%e9%95%bf%e5%85%ac%e5%85%b1%e5%89%8d%e7%bc%80%e5%8f%8c%e6%8c%87%e9%92%88" class="header-mark"></a>2 最长公共前缀【双指针】</h2><p><a href="https://leetcode-cn.com/problems/longest-common-prefix" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：14 最长公共前缀（简单）</a></p>
+<pre tabindex="0"><code>编写一个函数来查找字符串数组中的最长公共前缀
+如果不存在公共前缀，返回空字符串 &#34;&#34;。
+
+示例 1：
+输入：strs = [&#34;flower&#34;,&#34;flow&#34;,&#34;flight&#34;]
+输出：&#34;fl&#34;
+
+示例 2：
+输入：strs = [&#34;dog&#34;,&#34;racecar&#34;,&#34;car&#34;]
+输出：&#34;&#34;
+解释：输入不存在公共前缀。
+</code></pre><h3 id="遍历两两依次比" class="headerLink">
+    <a href="#%e9%81%8d%e5%8e%86%e4%b8%a4%e4%b8%a4%e4%be%9d%e6%ac%a1%e6%af%94" class="header-mark"></a>2.1 遍历两两依次比</h3><p>拿第一个依次与后面的去取去比较，取公共的最小值即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -276,109 +308,119 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-objectivec" data-lang="objectivec"><span class="line"><span class="cl"><span class="err">编写一个函数来查找字符串数组中的最长公共前缀</span>
-</span></span><span class="line"><span class="cl"><span class="err">如果不存在公共前缀，返回空字符串</span> <span class="s">&#34;&#34;</span><span class="err">。</span>
-</span></span><span class="line"><span class="cl"><span class="err">示例</span> <span class="mi">1</span><span class="err">：</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">输入：</span><span class="n">strs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#34;flower&#34;</span><span class="p">,</span><span class="s">&#34;flow&#34;</span><span class="p">,</span><span class="s">&#34;flight&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="err">输出：</span><span class="s">&#34;fl&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="err">示例</span> <span class="mi">2</span><span class="err">：</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">输入：</span><span class="n">strs</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#34;dog&#34;</span><span class="p">,</span><span class="s">&#34;racecar&#34;</span><span class="p">,</span><span class="s">&#34;car&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="err">输出：</span><span class="s">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="err">解释：输入不存在公共前缀。</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">*/</span><span class="o">**</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="n">param</span> <span class="p">{</span><span class="n">string</span><span class="p">[]}</span> <span class="n">strs</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="k">return</span> <span class="p">{</span><span class="n">string</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"> <span class="err">*/</span><span class="o">*</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">longestCommonPrefix</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">strs</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">strs</span><span class="p">.</span><span class="n">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">first</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">first</span> <span class="o">===</span> <span class="s">&#34;&#34;</span><span class="p">)</span> <span class="k">return</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">minLen</span> <span class="o">=</span> <span class="n">Number</span><span class="p">.</span><span class="n">MAX_SAFE_INTEGER</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strs</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="n">len</span> <span class="o">=</span> <span class="n">twoStrLongestCommonPrefix</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">minLen</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="n">min</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">minLen</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">longestCommonPrefix</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">strs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">strs</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">first</span> <span class="o">===</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">minLen</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">strs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">twoStrLongestCommonPrefix</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">strs</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">minLen</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">len</span><span class="p">,</span> <span class="nx">minLen</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">first</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">minLen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">first</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">minLen</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="nf">twoStrLongestCommonPrefix</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">cnt</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">===</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>  <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">twoStrLongestCommonPrefix</span> <span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">t</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">cnt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">t</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">cnt</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">cnt</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">j</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">cnt</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="err">思路二：</span> <span class="err">判断字符串</span><span class="mi">2</span> <span class="err">是否在字符串</span><span class="mi">1</span> <span class="err">里是否为子串。</span>
-</span></span><span class="line"><span class="cl">	<span class="err">是：在判断</span><span class="mi">2</span> <span class="err">是否在</span><span class="mf">3.4.5</span><span class="p">...</span><span class="n">n</span> <span class="err">里</span>
-</span></span><span class="line"><span class="cl">	<span class="err">否：字符串</span><span class="mi">2</span> <span class="err">长度减</span><span class="mi">1</span><span class="err">，再判。判断方法</span> <span class="n">string</span><span class="p">.</span><span class="n">iindexof</span> <span class="err">返回的下标是否为</span><span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// GO 语言实现
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">func</span> <span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs</span> <span class="p">[]</span><span class="n">string</span><span class="p">)</span> <span class="n">string</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">len</span><span class="p">(</span><span class="n">strs</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">{</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="判断是否为子串" class="headerLink">
+    <a href="#%e5%88%a4%e6%96%ad%e6%98%af%e5%90%a6%e4%b8%ba%e5%ad%90%e4%b8%b2" class="header-mark"></a>2.2 判断是否为子串</h3><p>思路二： 判断字符串 2 是否在字符串 1 里是否为子串。
+是：在判断 2 是否在 3.4.5&hellip;n 里
+否：字符串 2 长度减 1，再判。判断方法 string.indexof 返回的下标是否为 0</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="nx">strs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">strs</span><span class="p">)</span> <span class="p">&lt;</span> <span class="mi">1</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nl">prefix</span> <span class="p">:</span><span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="nl">k</span> <span class="p">:</span><span class="o">=</span> <span class="n">range</span> <span class="n">strs</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">strings</span><span class="p">.</span><span class="n">Index</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">prefix</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">len</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">prefix</span> <span class="o">:=</span> <span class="nx">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span><span class="nx">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">strs</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Index</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span><span class="nx">prefix</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="s">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="o">:</span><span class="n">len</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">prefix</span> <span class="p">=</span> <span class="nx">prefix</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">prefix</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">prefix</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>10**无重复字符的最长子串【双指针】**👉 <a href="https://link.juejin.cn/?target=https%3A%2F%2Fleetcode-cn.com%2Fproblems%2Flongest-substring-without-repeating-characters%2F" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：3 无重复字符的最长子串（中等）</a></p>
+</div><h2 id="无重复字符的最长子串双指针" class="headerLink">
+    <a href="#%e6%97%a0%e9%87%8d%e5%a4%8d%e5%ad%97%e7%ac%a6%e7%9a%84%e6%9c%80%e9%95%bf%e5%ad%90%e4%b8%b2%e5%8f%8c%e6%8c%87%e9%92%88" class="header-mark"></a>3 无重复字符的最长子串【双指针】</h2><p><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：3 无重复字符的最长子串（中等）</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">给定一个字符串</span> <span class="nx">s</span> <span class="err">，</span><span class="nx">请你找出其中不含有重复字符的</span> <span class="nx">最长子串</span> <span class="nx">的长度</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="o">:</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;abcabcbb&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="o">:</span> <span class="mi">3</span> 
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="o">:</span> <span class="nx">因为无重复字符的最长子串是</span> <span class="s2">&#34;abc&#34;</span><span class="err">，</span><span class="nx">所以其长度为</span> <span class="mi">3</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="o">:</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;bbbbb&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="o">:</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="o">:</span> <span class="nx">因为无重复字符的最长子串是</span> <span class="s2">&#34;b&#34;</span><span class="err">，</span><span class="nx">所以其长度为</span> <span class="mi">1</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">3</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="o">:</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;pwwkew&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="o">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="o">:</span> <span class="nx">因为无重复字符的最长子串是</span> <span class="s2">&#34;wke&#34;</span><span class="err">，</span><span class="nx">所以其长度为</span> <span class="mi">3</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">请注意</span><span class="err">，</span><span class="nx">你的答案必须是</span> <span class="nx">子串</span> <span class="nx">的长度</span><span class="err">，</span><span class="s2">&#34;pwke&#34;</span> <span class="nx">是一个子序列</span><span class="err">，</span><span class="nx">不是子串</span><span class="err">。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>右移一直  减减  到重复元素处。取左边的值减减，减至左边元素与右边相等处即，不再减</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -401,44 +443,75 @@
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-objectivec" data-lang="objectivec"><span class="line"><span class="cl"><span class="err">*/</span><span class="o">**</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="n">param</span> <span class="p">{</span><span class="n">string</span><span class="p">}</span> <span class="n">s</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="k">return</span> <span class="p">{</span><span class="n">number</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"> <span class="err">*/</span> <span class="c1">//     pwwkew
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">右移一直</span>  <span class="err">减减</span>  <span class="err">到重复元素处。取左边的值减减，减至左边元素与右边相等处即，不再减</span><span class="o">*</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">lengthOfLongestSubstring</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	  <span class="n">let</span> <span class="n">window</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">	  <span class="n">let</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	  <span class="n">let</span> <span class="n">maxLen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">maxStr</span> <span class="o">=</span> <span class="err">&#39;&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	  <span class="k">while</span> <span class="p">(</span><span class="n">right</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		    <span class="n">let</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">];</span> <span class="c1">//a
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		    <span class="n">right</span><span class="o">++</span><span class="p">;</span>     <span class="c1">//1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		    <span class="k">if</span> <span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="n">window</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> 
-</span></span><span class="line"><span class="cl">		    <span class="k">else</span> <span class="n">window</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">		    <span class="k">while</span> <span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		      <span class="n">let</span> <span class="n">d</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">		      <span class="n">left</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		      <span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">		    <span class="k">if</span> <span class="p">(</span><span class="n">maxLen</span> <span class="o">&lt;</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		      <span class="n">maxLen</span> <span class="o">=</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	  <span class="k">return</span> <span class="n">maxLen</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">lengthOfLongestSubstring</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nb">window</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">maxLen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">maxStr</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">right</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">right</span><span class="p">];</span> <span class="c1">//a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">right</span><span class="o">++</span><span class="p">;</span>     <span class="c1">//1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="nx">c</span><span class="p">])</span> <span class="nb">window</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="nb">window</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">left</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">left</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">window</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">maxLen</span> <span class="o">&lt;</span> <span class="nx">right</span> <span class="o">-</span> <span class="nx">left</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">maxLen</span> <span class="o">=</span> <span class="nx">right</span> <span class="o">-</span> <span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">maxLen</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>11**【面试真题】 最小覆盖子串【滑动窗口】**👉 <a href="https://link.juejin.cn/?target=https%3A%2F%2Fleetcode-cn.com%2Fproblems%2Fminimum-window-substring%2F" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：76 最小覆盖子串（困难）</a></p>
+</div><h2 id="最小覆盖子串" class="headerLink">
+    <a href="#%e6%9c%80%e5%b0%8f%e8%a6%86%e7%9b%96%e5%ad%90%e4%b8%b2" class="header-mark"></a>4 最小覆盖子串</h2><p> <a href="https://leetcode-cn.com/problems/minimum-window-substring" target="_blank" rel="noopener noreffer">【LeetCode 直通车】：76 最小覆盖子串（困难）</a></p>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">给你一个字符串</span> <span class="nx">s</span> <span class="err">、</span><span class="nx">一个字符串</span> <span class="nx">t</span> <span class="err">。</span><span class="nx">返回</span> <span class="nx">s</span> <span class="nx">中涵盖</span> <span class="nx">t</span> <span class="nx">所有字符的最小子串</span><span class="err">。</span><span class="nx">如果</span> <span class="nx">s</span> <span class="nx">中不存在涵盖</span> <span class="nx">t</span> <span class="nx">所有字符的子串</span><span class="err">，</span><span class="nx">则返回空字符串</span> <span class="s2">&#34;&#34;</span> <span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="nx">注意</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">对于</span> <span class="nx">t</span> <span class="nx">中重复字符</span><span class="err">，</span><span class="nx">我们寻找的子字符串中该字符数量必须不少于</span> <span class="nx">t</span> <span class="nx">中该字符数量</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="nx">如果</span> <span class="nx">s</span> <span class="nx">中存在这样的子串</span><span class="err">，</span><span class="nx">我们保证它是唯一的答案</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">1</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="err">：</span><span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;ADOBECODEBANC&#34;</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&#34;ABC&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span><span class="s2">&#34;BANC&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">2</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="err">：</span><span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&#34;a&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="err">：</span><span class="s2">&#34;a&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">3</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输入</span><span class="o">:</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&#34;aa&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">输出</span><span class="o">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="o">:</span> <span class="nx">t</span> <span class="nx">中两个字符</span> <span class="s1">&#39;a&#39;</span> <span class="nx">均应包含在</span> <span class="nx">s</span> <span class="nx">的子串中</span><span class="err">，</span>
+</span></span><span class="line"><span class="cl"><span class="nx">因此没有符合条件的子字符串</span><span class="err">，</span><span class="nx">返回空字符串</span><span class="err">。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -474,70 +547,51 @@
 </span><span class="lnt">32
 </span><span class="lnt">33
 </span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-objectivec" data-lang="objectivec"><span class="line"><span class="cl"><span class="err">*/</span><span class="o">**</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="n">param</span> <span class="p">{</span><span class="n">string</span><span class="p">}</span> <span class="n">s</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="n">param</span> <span class="p">{</span><span class="n">string</span><span class="p">}</span> <span class="n">t</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="p">@</span><span class="k">return</span> <span class="p">{</span><span class="n">string</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span> <span class="err">给你一个字符串</span> <span class="n">S</span><span class="err">、一个字符串</span> <span class="n">T</span><span class="err">，请在字符串</span> <span class="n">S</span> <span class="err">里面找出：包含</span> <span class="n">T</span> <span class="err">所有字母的最小子串。</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span>   <span class="err">“</span><span class="n">ebd</span><span class="err">”</span>
-</span></span><span class="line"><span class="cl"> <span class="o">*</span>   <span class="err">“</span><span class="n">eabcdebdfg</span><span class="err">”</span>
-</span></span><span class="line"><span class="cl"> <span class="err">*/</span>
-</span></span><span class="line"><span class="cl"><span class="err">窗口往右移动，</span><span class="n">right</span><span class="o">++</span><span class="err">。左移动的条件是移动到长度不再相等。</span><span class="o">*</span>
-</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">minWindow</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">need</span> <span class="o">=</span> <span class="p">{},</span> <span class="n">window</span> <span class="o">=</span> <span class="p">{};</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">c</span> <span class="n">of</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">need</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="n">need</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">need</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="c1">//need:包含 t 数组的元素的
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">minWindow</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">need</span> <span class="o">=</span> <span class="p">{},</span> <span class="nb">window</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">c</span> <span class="k">of</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">need</span><span class="p">[</span><span class="nx">c</span><span class="p">])</span> <span class="nx">need</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="nx">need</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="c1">//need:包含 t 数组的元素的
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">valid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span> <span class="o">=</span> <span class="n">Object</span><span class="p">.</span><span class="n">keys</span><span class="p">(</span><span class="n">need</span><span class="p">).</span><span class="n">length</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">minLen</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">minStr</span> <span class="o">=</span> <span class="err">&#39;&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">right</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="n">d</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">        <span class="n">right</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">])</span> <span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">need</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">need</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">===</span> <span class="n">window</span><span class="p">[</span><span class="n">d</span><span class="p">])</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">valid</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">valid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">need</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">minLen</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">minStr</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">right</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// &#34;ADOBECODEBANC&#34;, t = &#34;ABC&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">right</span><span class="p">];</span>              <span class="nx">l</span>    <span class="nx">r</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">right</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">window</span><span class="p">[</span><span class="nx">d</span><span class="p">])</span> <span class="nb">window</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="nb">window</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">need</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">need</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span> <span class="o">===</span> <span class="nb">window</span><span class="p">[</span><span class="nx">d</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">valid</span><span class="o">++</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="err">&#39;</span><span class="n">left</span> <span class="o">-</span> <span class="n">right</span><span class="err">&#39;</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">valid</span> <span class="o">===</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">minLen</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="n">minLen</span> <span class="o">=</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">                <span class="n">minStr</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="n">let</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">            <span class="n">left</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">window</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">need</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">window</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">need</span><span class="p">[</span><span class="n">c</span><span class="p">])</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="n">valid</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;left - right&#39;</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="nx">valid</span> <span class="o">===</span> <span class="nx">len</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">right</span> <span class="o">-</span> <span class="nx">left</span> <span class="o">&lt;</span> <span class="nx">minLen</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">minLen</span> <span class="o">=</span> <span class="nx">right</span> <span class="o">-</span> <span class="nx">left</span><span class="p">;</span>         <span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">minStr</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span> <span class="c1">//ADOBEC   CODEBA
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">left</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">left</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">window</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">need</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">need</span><span class="p">[</span><span class="nx">c</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">valid</span><span class="o">--</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">minStr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">minStr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul></div>
+</div></div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-08-21</span>
+                <span>更新于 2022-08-24</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -557,7 +611,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/linkedlist/" class="prev" rel="prev" title="链表那个链"><i class="fas fa-angle-left fa-fw"></i>链表那个链</a></div>
+    <div class="post-nav"><a href="/linkedlist/" class="prev" rel="prev" title="链表那个链"><i class="fas fa-angle-left fa-fw"></i>链表那个链</a>
+            <a href="/array/" class="next" rel="next" title="数组的那个组">数组的那个组<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
