@@ -288,7 +288,7 @@ title = "jino0’s bBlog"
     # 是否包括中日韩文字
     hasCJKLanguage = true
     # 默认每页列表显示的文章数目
-    paginate = 12
+    paginate = 6
     # [UA-XXXXXXXX-X] 谷歌分析代号 (被 params.analytics.google 替代)
     # googleAnalytics = ""
     # 版权描述，仅仅用于 SEO
@@ -395,7 +395,7 @@ title = "jino0’s bBlog"
         # 搜索框的占位提示语
         placeholder = ""
         # 最大结果数目
-        maxResultLength = 10
+        maxResultLength = 6
         # 结果内容片段长度
         snippetLength = 50
         # 搜索结果中高亮部分的 HTML 标签
@@ -420,7 +420,7 @@ title = "jino0’s bBlog"
       # 主页信息设置
       [languages.zh-cn.params.home]
         # RSS 文章数目
-        rss = 10
+        rss = 6
         # 主页个人信息
         [languages.zh-cn.params.home.profile]
           enable = true
@@ -442,7 +442,7 @@ title = "jino0’s bBlog"
         [languages.zh-cn.params.home.posts]
           enable = true
           # 主页每页显示文章数量
-          paginate = 10
+          paginate = 6
       # 主页的社交信息设置
       [languages.zh-cn.params.social]
         GitHub = "jino0"
