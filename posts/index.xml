@@ -3,7 +3,43 @@
         <title>所有文章 - jino0’s bBlog</title>
         <link>https://jino0.github.io/posts/</link>
         <description>所有文章 | jino0’s bBlog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 24 Aug 2022 00:06:11 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 30 Aug 2022 01:20:20 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>排序</title>
+    <link>https://jino0.github.io/sort/</link>
+    <pubDate>Tue, 30 Aug 2022 01:20:20 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/sort/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hot-air-balloon.jpeg" referrerpolicy="no-referrer">
+            </div><p>常见的排序算法</p>]]></description>
+</item><item>
+    <title>二叉树</title>
+    <link>https://jino0.github.io/binarytree/</link>
+    <pubDate>Mon, 29 Aug 2022 00:36:50 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/binarytree/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hot-air-balloon.jpeg" referrerpolicy="no-referrer">
+            </div><p>高频算法题系列：二叉树</p>]]></description>
+</item><item>
+    <title>动态规划</title>
+    <link>https://jino0.github.io/dp/</link>
+    <pubDate>Thu, 25 Aug 2022 20:27:11 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/dp/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/5450.jpeg" referrerpolicy="no-referrer">
+            </div><p>动态规划问题的一般形式就是求<code>最值</code>。动态规划其实是运筹学的一种最优化方法，只不过在计算机问题上应用比较多，比如说让你求最长递增子序列呀，最小编辑距离呀等等。</p>]]></description>
+</item><item>
+    <title>贪心算法</title>
+    <link>https://jino0.github.io/greedy/</link>
+    <pubDate>Thu, 25 Aug 2022 19:33:20 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/greedy/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/hot_air_balloons.jpeg" referrerpolicy="no-referrer">
+            </div><p>贪心算法（greedy algorithm），又称贪婪算法，是寻找最优解问题的常用方法。</p>]]></description>
+</item><item>
     <title>数组的那个组</title>
     <link>https://jino0.github.io/array/</link>
     <pubDate>Wed, 24 Aug 2022 00:06:11 &#43;0800</pubDate><author>

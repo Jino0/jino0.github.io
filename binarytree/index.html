@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">二叉树 - jino0’s bBlog</title><meta name="Description" content="Hugo DoIt 主题官方文档"><meta property="og:title" content="二叉树" />
+<meta property="og:description" content="高频算法题系列：二叉树" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jino0.github.io/binarytree/" /><meta property="og:image" content="https://jino0.github.io/images/avatar.webp"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-29T00:36:50+08:00" />
+<meta property="article:modified_time" content="2022-08-30T01:16:40+08:00" /><meta property="og:site_name" content="Hugo DoIt Theme Documentation" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jino0.github.io/images/avatar.webp"/>
+
+<meta name="twitter:title" content="二叉树"/>
+<meta name="twitter:description" content="高频算法题系列：二叉树"/>
+<meta name="application-name" content="DoIt">
+<meta name="apple-mobile-web-app-title" content="DoIt">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://jino0.github.io/binarytree/" /><link rel="prev" href="https://jino0.github.io/dp/" /><link rel="next" href="https://jino0.github.io/sort/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="MQ8DNu27ayX6B_4ObiEDK09vGr1fdy7kOAnbd09hJk4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "二叉树",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jino0.github.io\/binarytree\/"
+        },"image": ["https:\/\/jino0.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "BinaryTree","wordcount":  2184 ,
+        "url": "https:\/\/jino0.github.io\/binarytree\/","datePublished": "2022-08-29T00:36:50+08:00","dateModified": "2022-08-30T01:16:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/jino0.github.io\/images\/avatar.webp",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "jino0"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="jino0’s bBlog"><img
+        class="lazyload logo"
+        data-src="/images/camel.png"
+        data-srcset="/images/camel.png, /images/camel.png 1.5x, /images/camel.png 2x"
+        data-sizes="auto"
+        alt="/images/camel.png"
+        title="/images/camel.png"><span class="header-title-pre">  </span>jino0’s bBlog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="ss"> 所有 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/series/"> 系列 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" title="Select Language" id="language-select-desktop" onchange="location = this.value;"><option value="/binarytree/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="jino0’s bBlog"><img
+        class="lazyload logo"
+        data-src="/images/camel.png"
+        data-srcset="/images/camel.png, /images/camel.png 1.5x, /images/camel.png 2x"
+        data-sizes="auto"
+        alt="/images/camel.png"
+        title="/images/camel.png"><span class="header-title-pre">  </span>jino0’s bBlog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="ss">所有</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/series/" title="">系列</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="#" onclick="return false;" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" title="Select Language" onchange="location = this.value;"><option value="/binarytree/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#二叉树的最近公共祖先">二叉树的最近公共祖先 </a></li>
+    <li><a href="#二叉搜索树中的搜索">二叉搜索树中的搜索</a></li>
+    <li><a href="#删除二叉搜索树中的节点">删除二叉搜索树中的节点</a>
+      <ul>
+        <li><a href="#左的最右">左的最右</a></li>
+        <li><a href="#右的最左">右的最左</a></li>
+      </ul>
+    </li>
+    <li><a href="#完全二叉树的节点个数">完全二叉树的节点个数</a></li>
+    <li><a href="#二叉树的锯齿形层序遍历">二叉树的锯齿形层序遍历</a></li>
+  </ul>
+</nav></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">二叉树</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://jino0.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author">jino0</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/data/"><i class="far fa-folder fa-fw"></i>Data</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-29">2022-08-29</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-30">2022-08-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2184 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/binarytree/" class="leancloud_visitors" data-flag-title="二叉树">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/binarytree/" class="comment_count" data-flag-title="二叉树">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        data-src="/binarytree/hot-air-balloon.jpeg"
+        data-srcset="/binarytree/hot-air-balloon.jpeg, /binarytree/hot-air-balloon.jpeg 1.5x, /binarytree/hot-air-balloon.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/hot-air-balloon.jpeg"
+        title="/binarytree/hot-air-balloon.jpeg" height="861" width="1280"></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#二叉树的最近公共祖先">二叉树的最近公共祖先 </a></li>
+    <li><a href="#二叉搜索树中的搜索">二叉搜索树中的搜索</a></li>
+    <li><a href="#删除二叉搜索树中的节点">删除二叉搜索树中的节点</a>
+      <ul>
+        <li><a href="#左的最右">左的最右</a></li>
+        <li><a href="#右的最左">右的最左</a></li>
+      </ul>
+    </li>
+    <li><a href="#完全二叉树的节点个数">完全二叉树的节点个数</a></li>
+    <li><a href="#二叉树的锯齿形层序遍历">二叉树的锯齿形层序遍历</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>高频算法题系列：二叉树</p>
+<h2 id="二叉树的最近公共祖先" class="headerLink">
+    <a href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e8%bf%91%e5%85%ac%e5%85%b1%e7%a5%96%e5%85%88" class="header-mark"></a>1 二叉树的最近公共祖先 </h2><p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank" rel="noopener noreffer">【LeetCode 236】 二叉树的最近公共祖先（简单）</a></p>
+<p><img
+        class="lazyload"
+        data-src="question_236.png"
+        data-srcset="/binarytree/question_236.png, question_236.png 1.5x, /binarytree/question_236.png 2x"
+        data-sizes="auto"
+        alt="/binarytree/question_236.png"
+        title="/binarytree/question_236.png"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">例如</span><span class="err">，</span><span class="nx">给定如上二叉树</span><span class="o">:</span>  <span class="nx">root</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">1</span><span class="o">:</span> <span class="nx">输入</span><span class="o">:</span> <span class="nx">root</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="nx">p</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">q</span> <span class="o">=</span> <span class="mi">1</span> <span class="nx">输出</span><span class="o">:</span> <span class="mi">3</span>      
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="o">:</span> <span class="nx">节点</span> <span class="mi">5</span> <span class="nx">和节点</span> <span class="mi">1</span> <span class="nx">的最近公共祖先是节点</span> <span class="mi">3</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">示例</span> <span class="mi">2</span><span class="o">:</span> <span class="nx">输入</span><span class="o">:</span> <span class="nx">root</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="nx">p</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">q</span> <span class="o">=</span> <span class="mi">4</span> <span class="nx">输出</span><span class="o">:</span> <span class="mi">5</span>      
+</span></span><span class="line"><span class="cl"><span class="nx">解释</span><span class="o">:</span> <span class="nx">节点</span> <span class="mi">5</span> <span class="nx">和节点</span> <span class="mi">4</span> <span class="nx">的最近公共祖先是节点</span> <span class="mi">5</span><span class="err">。</span><span class="nx">因为根据定义最近公共祖先节点可以为节点本身</span><span class="err">。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如何找父指针 ？？？需要实现自底向下，怎么自底向上查找？？？</p>
+<p>后续遍历，回溯，即可实现。可通过后续遍历的过程中，利用 Map 存储节点的父节点（ key: 节点，value：父节点）。</p>
+<p>然后获取 p 的父节点之后在此存储起来，在遍历 q 的父节点，找 p 刚存储的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Definition for a binary tree node.
+</span></span></span><span class="line"><span class="cl"><span class="cm">* function TreeNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.left = this.right = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">* }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*//**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} root
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} p
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} q
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @return {TreeNode}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">visited</span><span class="p">;</span> <span class="kd">let</span> <span class="nx">parent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">lowestCommonAncestor</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">p</span><span class="p">,</span> <span class="nx">q</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">visited</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">p</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">visited</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">p</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">q</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">visited</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">val</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">q</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">parent</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span> <span class="nx">root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">parent</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span> <span class="nx">root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二叉搜索树中的搜索" class="headerLink">
+    <a href="#%e4%ba%8c%e5%8f%89%e6%90%9c%e7%b4%a2%e6%a0%91%e4%b8%ad%e7%9a%84%e6%90%9c%e7%b4%a2" class="header-mark"></a>2 二叉搜索树中的搜索</h2><p><a href="https://leetcode.cn/problems/search-in-a-binary-search-tree/" target="_blank" rel="noopener noreffer">【LeetCode 700】 二叉搜索树中的搜索（简单）</a></p>
+<p>给定二叉搜索树（BST）的根节点 root 和一个整数值 val。
+你需要在 BST 中找到节点值等于 val 的节点。 返回以该节点为根的子树。 如果节点不存在，则返回 null 。</p>
+<p>示例 1:
+<img
+        class="lazyload"
+        data-src="tree1.jpeg"
+        data-srcset="/binarytree/tree1.jpeg, tree1.jpeg 1.5x, /binarytree/tree1.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/tree1.jpeg"
+        title="/binarytree/tree1.jpeg">
+输入： root = [4,2,7,1,3],  val = 2
+输出： [2,1,3]</p>
+<p>示例 2:
+<img
+        class="lazyload"
+        data-src="tree2.jpeg"
+        data-srcset="/binarytree/tree2.jpeg, tree2.jpeg 1.5x, /binarytree/tree2.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/tree2.jpeg"
+        title="/binarytree/tree2.jpeg">
+输入： root = [4,2,7,1,3],  val = 5
+输出： []</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Definition for a binary tree node.
+</span></span></span><span class="line"><span class="cl"><span class="cm">* function TreeNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.left = this.right = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">* }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} root
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {number} val
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @return {TreeNode}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">searchBST</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">val</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">&gt;</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">searchBST</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">&lt;</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">searchBST</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span> <span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="删除二叉搜索树中的节点" class="headerLink">
+    <a href="#%e5%88%a0%e9%99%a4%e4%ba%8c%e5%8f%89%e6%90%9c%e7%b4%a2%e6%a0%91%e4%b8%ad%e7%9a%84%e8%8a%82%e7%82%b9" class="header-mark"></a>3 删除二叉搜索树中的节点</h2><p><a href="https://leetcode.cn/problems/delete-node-in-a-bst/" target="_blank" rel="noopener noreffer">【LeetCode 450】 删除二叉搜索树的节点（中等）</a>
+给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。
+一般来说，删除节点可分为两个步骤：
+首先找到需要删除的节点；
+如果找到了，删除它。</p>
+<p>示例 1: <br>
+<img
+        class="lazyload"
+        data-src="del_node_1.jpeg"
+        data-srcset="/binarytree/del_node_1.jpeg, del_node_1.jpeg 1.5x, /binarytree/del_node_1.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/del_node_1.jpeg"
+        title="/binarytree/del_node_1.jpeg"> <br>
+输入：root = [5,3,6,2,4,null,7], key = 3
+输出：[5,4,6,2,null,null,7]   <br>
+解释：给定需要删除的节点值是 3，所以我们首先找到 3 这个节点，然后删除它。
+一个正确的答案是 [5,4,6,2,null,null,7], 如下图所示。
+另一个正确答案是 [5,2,6,null,4,null,7]。</p>
+<p>示例 2: <br>
+<img
+        class="lazyload"
+        data-src="del_node_1.jpeg"
+        data-srcset="/binarytree/del_node_1.jpeg, del_node_1.jpeg 1.5x, /binarytree/del_node_1.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/del_node_1.jpeg"
+        title="/binarytree/del_node_1.jpeg"></p>
+<p>输入: root = [5,3,6,2,4,null,7], key = 0
+输出: [5,3,6,2,4,null,7]
+解释: 二叉树不包含值为 0 的节点</p>
+<p>示例 3:
+输入: root = [], key = 0
+输出: []</p>
+<h3 id="左的最右" class="headerLink">
+    <a href="#%e5%b7%a6%e7%9a%84%e6%9c%80%e5%8f%b3" class="header-mark"></a>3.1 左的最右</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Definition for a binary tree node.
+</span></span></span><span class="line"><span class="cl"><span class="cm">* function TreeNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.left = this.right = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">* }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} root
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {number} key
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @return {TreeNode}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">deleteNode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>  <span class="p">{</span><span class="c1">// 左的最右，或右的最左
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">getMinTreeMaxNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">deleteNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">target</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">&lt;</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="nx">deleteNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">&gt;</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">deleteNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">root</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getMinTreeMaxNode</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>   
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">getMinTreeMaxNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="右的最左" class="headerLink">
+    <a href="#%e5%8f%b3%e7%9a%84%e6%9c%80%e5%b7%a6" class="header-mark"></a>3.2 右的最左</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">deleteNode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">getMinTreeMaxNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="nx">deleteNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span> <span class="nx">target</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">&lt;</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="nx">deleteNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">&gt;</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">deleteNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">root</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getMinTreeMaxNode</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">root</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">getMinTreeMaxNode</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="完全二叉树的节点个数" class="headerLink">
+    <a href="#%e5%ae%8c%e5%85%a8%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e8%8a%82%e7%82%b9%e4%b8%aa%e6%95%b0" class="header-mark"></a>4 完全二叉树的节点个数</h2><p><a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/" target="_blank" rel="noopener noreffer">【LeetCode 222】 完全二叉树的节点个数（中等）</a></p>
+<p>给你一棵 完全二叉树 的根节点 root ，求出该树的节点个数。
+完全二叉树 的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2^h 个节点。</p>
+<p>示例 1：
+<img
+        class="lazyload"
+        data-src="complete.jpeg"
+        data-srcset="/binarytree/complete.jpeg, complete.jpeg 1.5x, /binarytree/complete.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/complete.jpeg"
+        title="/binarytree/complete.jpeg">
+输入：root = [1,2,3,4,5,6]
+输出：6</p>
+<p>示例 2：
+输入：root = []
+输出：0</p>
+<p>示例 3：
+输入：root = [1]
+输出：1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">ß</span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Definition for a binary tree node.
+</span></span></span><span class="line"><span class="cl"><span class="cm">* function TreeNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.left = this.right = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">* }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*//**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} root
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @return {number}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">countNodes</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">root</span><span class="p">,</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">root</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">lh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">rh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">l</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">l</span> <span class="o">=</span> <span class="nx">l</span><span class="p">.</span><span class="nx">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">lh</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">r</span> <span class="o">=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">rh</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">lh</span> <span class="o">===</span> <span class="nx">rh</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">lh</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nx">countNodes</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="o">+</span> <span class="nx">countNodes</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二叉树的锯齿形层序遍历" class="headerLink">
+    <a href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e9%94%af%e9%bd%bf%e5%bd%a2%e5%b1%82%e5%ba%8f%e9%81%8d%e5%8e%86" class="header-mark"></a>5 二叉树的锯齿形层序遍历</h2><p><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/" target="_blank" rel="noopener noreffer">【LeetCode 103】锯齿形层序遍历（中等）</a>
+给你二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。</p>
+<p>示例 1：
+<img
+        class="lazyload"
+        data-src="tree3.jpeg"
+        data-srcset="/binarytree/tree3.jpeg, tree3.jpeg 1.5x, /binarytree/tree3.jpeg 2x"
+        data-sizes="auto"
+        alt="/binarytree/tree3.jpeg"
+        title="/binarytree/tree3.jpeg">  <br>
+输入：root = [3,9,20,null,null,15,7]
+输出：[[3],[20,9],[15,7]]</p>
+<p>示例 2：
+输入：root = [1]
+输出：[[1]]</p>
+<p>示例 3：
+输入：root = []
+输出：[]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Definition for a binary tree node.
+</span></span></span><span class="line"><span class="cl"><span class="cm">* function TreeNode(val) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.val = val;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*     this.left = this.right = null;
+</span></span></span><span class="line"><span class="cl"><span class="cm">* }
+</span></span></span><span class="line"><span class="cl"><span class="cm">*//**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @param {TreeNode} root
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @return {number[][]}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">zigzagLevelOrder</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">BFS</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">BFS</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">inOrder</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">resItem</span> <span class="o">=</span> <span class="p">[];</span> <span class="kd">let</span> <span class="nx">node</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">stack1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Stack</span><span class="p">();</span> <span class="kd">let</span> <span class="nx">stack2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Stack</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="c1">// 判断交换时机*
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stack1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span> <span class="nx">res</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">root</span><span class="p">.</span><span class="nx">val</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">inOrder</span> <span class="o">=</span> <span class="o">!</span><span class="nx">inOrder</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nx">stack1</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">()</span> <span class="o">||</span> <span class="o">!</span><span class="nx">stack2</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">stack1</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="nx">flag</span> <span class="o">=</span> <span class="s1">&#39;stack1&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">stack2</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="nx">flag</span> <span class="o">=</span> <span class="s1">&#39;stack2&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">*</span><span class="c1">// 决定取那个栈里面的元素*
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack2&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">stack1</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">stack1</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack1&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">stack2</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">stack2</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">inOrder</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack1&#39;</span><span class="p">)</span> <span class="nx">stack1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="nx">stack2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">resItem</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack1&#39;</span><span class="p">)</span> <span class="nx">stack1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="nx">stack2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">resItem</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack1&#39;</span><span class="p">)</span> <span class="nx">stack1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="nx">stack2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">resItem</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">right</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack1&#39;</span><span class="p">)</span> <span class="nx">stack1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="nx">stack2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">resItem</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">*</span><span class="c1">// 判断下次翻转的时机*
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">((</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack2&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">stack1</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="o">||</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="s1">&#39;stack1&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">stack2</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">()))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">inOrder</span> <span class="o">=</span> <span class="o">!</span><span class="nx">inOrder</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">*</span><span class="c1">// 需要翻转了，就加一轮值*
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="nx">resItem</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">res</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">resItem</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">resItem</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Stack</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">push</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">]</span> <span class="o">=</span> <span class="nx">element</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span> <span class="k">return</span> <span class="kc">undefined</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">delete</span> <span class="k">this</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">size</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">size</span><span class="p">()</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/binarytree/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="https://jino0.github.io/binarytree/" data-hashtag="BinaryTree"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://jino0.github.io/binarytree/" data-title="二叉树"><i class="fab fa-hacker-news fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Line" data-sharer="line" data-url="https://jino0.github.io/binarytree/" data-title="二叉树"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://jino0.github.io/binarytree/" data-title="二叉树" data-image="hot-air-balloon.jpeg" data-ralateuid="hot"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Telegram" data-sharer="telegram" data-url="https://jino0.github.io/binarytree/" data-title="二叉树" data-web><i class="fab fa-telegram-plane fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/binarytree/">BinaryTree</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/dp/" class="prev" rel="prev" title="动态规划"><i class="fas fa-angle-left fa-fw"></i>动态规划</a>
+            <a href="/sort/" class="next" rel="next" title="排序">排序<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line">
+                
+
+                </div>
+
+            
+
+            <div class="footer-line">
+                <span id="runtime_span">网站已在风雨中运行:267天23小时45分40秒</span>
+                <script type="text/javascript">function show_runtime(){
+                    window.setTimeout("show_runtime()",1000);
+                    X=new Date("8/2/2022 11:27:50");
+                    Y=new Date();
+                    T=(Y.getTime()-X.getTime());
+                    M=24*60*60*1000;a=T/M;
+                    A=Math.floor(a);b=(a-A)*24;
+                    B=Math.floor(b);c=(b-B)*60;
+                    C=Math.floor((b-B)*60);
+                    D=Math.floor((c-C)*60);
+                    runtime_span.innerHTML="本船舶已在知识海洋航行："+A+" 天 "+B+" 小时 "+C+" 分 "+D+" 秒 "}show_runtime();
+                </script>
+            </div>
+            <div class="footer-line">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="site-pv" title="总访问量">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                        <span class="site-pv" title="总访问量">本站访客数<span id="busuanzi_value_site_uv"></span>次</span>
+                        
+                    </span></div>
+
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://doit-docs-comment-twikoo.vercel.app/","lang":"zh-cn"},"valine":{"appId":"","appKey":"","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"en","pageSize":10,"placeholder":"你的评论 ...","recordIP":false,"visitor":true}},"search":{"algoliaAppID":"5YGRNRQK1G","algoliaIndex":"zh_cn_index","algoliaSearchKey":"0ff6874805de24b84aa1d5ebccad56cd","highlightTag":"em","maxResultLength":6,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/valine/Valine.min.js" defer></script><script type="text/javascript" src="/js/valine.min.js" defer></script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.js" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><link rel="stylesheet" href="/lib/valine/valine.min.css"></div>
+</body>
+
+</html>
