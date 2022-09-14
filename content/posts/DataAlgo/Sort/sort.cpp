@@ -53,11 +53,11 @@ void Radixx(int arr[], int nlen, int nNum, Radix **pRadix);
 void RadixSort(int arr[], int nlen);
 int main()
 {
-    int arr[] = {400,999,500,600,601,701,800,1000};
-    int arr1[] = {1, 2, 33, 4, 36, 31, 30, 39, 23, 12, 35};
-    printArr(arr, sizeof(arr) / sizeof(int));
-    BucketSort(arr, sizeof(arr) / sizeof(int));
-    printArr(arr, sizeof(arr) / sizeof(int));
+    int arr1[] = {410,999,550,640,671,791,800,1000};
+    int arr[] = {1, 2, 33, 4, 36, 31, 30, 39, 23, 12, 35};
+    // printArr(arr1, sizeof(arr1) / sizeof(int));
+    RadixSort(arr1, sizeof(arr1) / sizeof(int));
+    printArr(arr1, sizeof(arr1) / sizeof(int));
 
     return 0;
 }
@@ -208,6 +208,8 @@ void BucketSort(int arr[], int nlen)
         if (arr[i] > nMax)
             nMax = arr[i];
     }
+    printf("nMin: %d, nMax: %d\n", nMin, nMax);
+
     int nCount = 0;
     int nBase = 1;
     int nNum = nMin;
@@ -336,20 +338,25 @@ void HeapSort(int arr[], int nlen)
 {
     if (arr == NULL || nlen <= 0)
         return;
-
     int i;
     for (i = nlen / 2 - 1; i >= 0; i--)
     {
         Adjust(arr, nlen, i);
     }
-    for (i = nlen - 1; i > 0; i--)
-    {
-        arr[0] = arr[0] ^ arr[i];
-        arr[i] = arr[0] ^ arr[i];
-        arr[0] = arr[0] ^ arr[i];
-        Adjust(arr, i, 0);
-    }
+    // for (i = nlen - 1; i > 0; i--)
+    // {
+    //     arr[0] = arr[0] ^ arr[i];
+    //     arr[i] = arr[0] ^ arr[i];
+    //     arr[0] = arr[0] ^ arr[i];
+    //     Adjust(arr, i, 0);
+    // }
 }
+        //          1000                      400
+        //          /  \                  999      500
+        //       999   800             600  601  701  800
+        //       / \   /  \          1000 
+        //     600 601 701 500
+        //  400
 //-------归并排序-------------------------------------------
 // 平均时间复杂度：O(nlogn)
 // 最佳时间复杂度：O(n)
@@ -735,58 +742,3 @@ void printArr(int *arr, int nlen)
     }
     printf("\n");
 }
-
-
-
-// ## 用最少数量的箭引爆气球【排序算法】
-// [【LeetCode 451】最少数量的箭（中等）](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/)
-
-// ```cpp
-// [1,6][2,8][7,12][10,16]
-// */**
-//     * @param {number[][]} points
-//     * @return {number}
-//     */
-// var findMinArrowShots = function(points) {
-//     if (!points.length ) {
-//         return 0;
-//     }
-//     points.sort((a, b) => a[1] - b[1]);
-//     let pos = points[0][1]
-//     let ans = 1;
-//     for (let balloon of points) {
-//         if (balloon[0] > pos) {
-//             pos = balloon[1];
-//             ans++;
-//         }
-//     }
-//     return ans;
-// }*
-// ```
-    
-// ## 合并区间【排序算法+区间问题
-// [【LeetCode 56】 合并区间（中等）](https://leetcode-cn.com/problems/merge-intervals/)
-// ```cpp
-// intervals = [[1,3],[2,6],[8,10],[15,18]]
-// */**
-//     * @param {number[][]} intervals
-//     * @return {number[][]}
-//     */*
-// var merge = function(intervals) {
-//     if (intervals.length === 0) return [];
-//     intervals.sort((a, b) => a[0] - b[0]);
-//     let mergeArr = [intervals[0]];
-//     let last, curr;
-//     for (let j = 1; j < intervals.length; j++) {
-//         last = mergeArr[mergeArr.length - 1];
-//         curr = intervals[j];
-//                 // last[1] : 已合并的最右(最大)
-//                 // curr[0] : 待合并的最左(最小) 
-//         if (last[1] >= curr[0]) { 
-//             last[1] = Math.max(curr[1], last[1]);
-//         } else {
-//             mergeArr.push(curr);
-//         }
-//     }
-//     return mergeArr;
-// };
