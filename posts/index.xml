@@ -3,14 +3,52 @@
         <title>所有文章 - jino0’s bBlog</title>
         <link>https://jino0.github.io/posts/</link>
         <description>所有文章 | jino0’s bBlog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 30 Aug 2022 01:20:20 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>排序</title>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 05 Sep 2022 23:53:19 &#43;0800</lastBuildDate><atom:link href="https://jino0.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>栈 相关</title>
+    <link>https://jino0.github.io/stack/</link>
+    <pubDate>Mon, 05 Sep 2022 23:53:19 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/stack/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/pexels-pixabay.jpeg" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
+    <title>回溯 算法</title>
+    <link>https://jino0.github.io/backtracking/</link>
+    <pubDate>Mon, 05 Sep 2022 16:53:19 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/backtracking/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/pexels-brett-sayle.jpeg" referrerpolicy="no-referrer">
+            </div><p>回溯法可以理解为通过选择不同的岔路口寻找目的地，一个岔路口一个岔路口的去尝试找到目的地。如果走错了路，继续返回来找到岔路口的另一条路，直到找到目的地。</p>]]></description>
+</item><item>
+    <title>DFS &amp;&amp; BFS </title>
+    <link>https://jino0.github.io/bfs-dfs/</link>
+    <pubDate>Thu, 01 Sep 2022 19:57:20 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/bfs-dfs/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/pexels-detavernier-odile.jpeg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p><code>深度优先遍历</code>（Depth First Search, 简称 DFS） 与<code>广度优先遍历</code>（Breath First Search）是图论中两种非常重要的算法，生产上广泛用于拓扑排序，寻路（走迷宫），搜索引擎，爬虫等，也频繁出现在 leetcode，高频面试题中。</p>
+</blockquote>]]></description>
+</item><item>
+    <title>排序算法题</title>
+    <link>https://jino0.github.io/sort-2/</link>
+    <pubDate>Wed, 31 Aug 2022 15:08:36 &#43;0800</pubDate><author>
+        <name>jino0</name>
+    </author><guid>https://jino0.github.io/sort-2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/pexels-lad-fury.jpeg" referrerpolicy="no-referrer">
+            </div><p>常见的排序算法相关题。</p>]]></description>
+</item><item>
+    <title>十大经典排序</title>
     <link>https://jino0.github.io/sort/</link>
     <pubDate>Tue, 30 Aug 2022 01:20:20 &#43;0800</pubDate><author>
         <name>jino0</name>
     </author><guid>https://jino0.github.io/sort/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/hot-air-balloon.jpeg" referrerpolicy="no-referrer">
+                <img src="/pexels-kevin-bidwell.jpeg" referrerpolicy="no-referrer">
             </div><p>常见的排序算法</p>]]></description>
 </item><item>
     <title>二叉树</title>
@@ -75,14 +113,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/elephant-3458033__480.jpeg" referrerpolicy="no-referrer">
             </div><p>介绍 git 相关使用方法，一些命令的介绍。也是 <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreffer">git pro 读书笔记</a>。</p>]]></description>
-</item><item>
-    <title>Mac&#43;hugo&#43;github 搭建个人博客</title>
-    <link>https://jino0.github.io/mac-hugo/</link>
-    <pubDate>Fri, 05 Aug 2022 14:37:23 &#43;0800</pubDate><author>
-        <name>jino0</name>
-    </author><guid>https://jino0.github.io/mac-hugo/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/hot-air-balloons.jpeg" referrerpolicy="no-referrer">
-            </div><p>使用 mac+hugo+github 搭建个人博客。</p>]]></description>
 </item></channel>
 </rss>
